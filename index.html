@@ -77,6 +77,7 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 
 /* ============ SCREENS ============ */
 .screen{padding:0 0 calc(40px + env(safe-area-inset-bottom))}
+#screen-home{padding-bottom:0}
 .screen[hidden]{display:none}
 .screen-head{background:var(--rf-navy);color:#fff;padding:26px 24px 28px}
 .kapitel{font:500 10.5px var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--rf-crimson-glow);margin:0 0 12px}
@@ -104,11 +105,13 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 .tile-sand .no{color:var(--rf-crimson)}
 .tile-sand svg{opacity:.4}
 
-.home-footer{background:var(--rf-navy-deep);color:rgba(255,255,255,.75);padding:26px 24px 34px;text-align:center}
-.home-footer img{width:46px;height:46px;margin:0 auto 14px}
+.home-footer{background:var(--rf-navy-deep);color:rgba(255,255,255,.75);padding:26px 24px 0;text-align:center}
+.home-footer .signet{width:46px;height:46px;margin:0 auto 14px}
 .home-footer .claim-de{font:400 15px/1.4 var(--font-display);font-style:italic;color:#fff;margin:0}
 .home-footer .claim-cs{font:400 14px/1.4 var(--font-display);font-style:italic;color:var(--rf-crimson-glow);margin:2px 0 0}
 .home-footer .fine{font:400 11px/1.5 var(--font-sans);letter-spacing:.04em;margin:16px 0 0;color:rgba(255,255,255,.55)}
+.partner-logos{background:#fff;margin:22px -24px 0;padding:18px 24px calc(18px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.partner-logos img{height:32px;width:auto;margin:0}
 
 /* ============ WELCOME ============ */
 .welcome-hero{position:relative;overflow:hidden;color:#fff;background-image:linear-gradient(180deg,rgba(7,32,57,.55),rgba(7,32,57,.82)),url('uploads/hero-dresden.jpg');background-size:cover;background-position:center 55%;padding:30px 24px 34px}
@@ -145,9 +148,8 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 .prog-row .pdetail{font:400 12.5px/1.5 var(--font-sans);color:var(--text-muted);margin:5px 0 0}
 
 /* ============ LOCATION ============ */
-.map-ph{height:190px;background:repeating-linear-gradient(45deg,#e7decf,#e7decf 12px,#efe8dc 12px,#efe8dc 24px);display:flex;align-items:center;justify-content:center;color:var(--rf-n-500);position:relative}
-.map-ph-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
-.map-ph-inner span{font:500 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.map-embed{height:190px;background:var(--rf-sand-deep)}
+.map-embed iframe{width:100%;height:100%;border:0;display:block}
 .venue{padding:24px 24px 0}
 .venue .vname{font:600 21px/1.2 var(--font-display);color:var(--rf-navy);margin:0}
 .venue .vaddr{font:400 15px/1.55 var(--font-sans);color:var(--text-body);margin:6px 0 0}
@@ -175,16 +177,16 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 .italic-note{font:400 11px/1.5 var(--font-sans);color:var(--text-muted);margin:6px 4px 0;font-style:italic}
 
 /* ============ FORUMS ============ */
-.forum-list{padding:20px 20px 0;display:flex;flex-direction:column;gap:16px}
+.forum-list{padding:20px 20px 0;display:flex;flex-direction:column;gap:20px}
 .forum-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
-.forum-card .fhead{color:#fff;padding:18px 20px}
-.forum-card .fhead .fno{font:600 10px var(--font-sans);letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin:0 0 5px}
-.forum-card .fhead .ftitle{font:600 22px/1.05 var(--font-display);margin:0}
-.forum-card .fbody{padding:16px 20px 19px}
-.forum-card .fbody p{font:400 14px/1.55 var(--font-sans);color:var(--text-body);margin:0}
-.forum-card .forg{display:flex;align-items:center;gap:9px;margin-top:15px;padding-top:14px;border-top:1px solid var(--rf-sand-deep)}
-.forum-card .forg .flabel{font:500 9.5px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
-.forum-card .forg .fval{font:600 12.5px var(--font-sans);color:var(--rf-navy)}
+.forum-card .fphoto{position:relative}
+.forum-card .fphoto img{width:100%;height:150px;object-fit:cover;display:block}
+.forum-card .fnum{position:absolute;right:14px;bottom:-18px;width:36px;height:36px;border-radius:50%;background:var(--rf-crimson);color:#fff;display:flex;align-items:center;justify-content:center;font:600 15px var(--font-display);box-shadow:var(--shadow-sm);border:3px solid #fff}
+.forum-card .fbody{padding:26px 20px 19px}
+.forum-card .ftitle{font:600 19px/1.25 var(--font-display);color:var(--rf-navy);margin:0}
+.forum-card .fquestion{font:400 13.5px/1.5 var(--font-sans);color:var(--text-muted);margin:8px 0 0}
+.forum-card .forg{margin-top:14px;padding-top:13px;border-top:1px solid var(--rf-sand-deep)}
+.forum-card .forg .fval{font:600 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--rf-crimson)}
 
 /* ============ RESULTS ============ */
 .board-list{padding:20px 20px 0;display:flex;flex-direction:column;gap:11px}
@@ -213,6 +215,7 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 .pgroup-grid.cols-1{grid-template-columns:1fr}
 .pgroup-grid.cols-2{grid-template-columns:1fr 1fr}
 .partner-item{background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);min-height:74px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 12px}
+.partner-item img{height:32px;width:auto;max-width:100%}
 .partner-item span{font:600 12.5px/1.3 var(--font-sans);color:var(--rf-navy)}
 </style>
 </head>
@@ -265,10 +268,14 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     </div>
 
     <div class="home-footer">
-      <img src="assets/logo-signet-circle.png" alt="Signet Regionalforum" width="46" height="46">
+      <img class="signet" src="assets/logo-signet-circle.png" alt="Signet Regionalforum" width="46" height="46">
       <p class="claim-de">Dialog im Grenzraum</p>
       <p class="claim-cs">Dialog v příhraničí</p>
       <p class="fine"><span data-lang-de>Durchführung: Stiftung IBZ St. Marienthal · Auswärtiges Amt</span><span data-lang-cs>Realizace: Nadace IBZ St. Marienthal · Ministerstvo zahraničí</span></p>
+      <div class="partner-logos">
+        <img src="assets/logo-ibz.png" alt="Stiftung IBZ St. Marienthal" height="32">
+        <img src="assets/logo-aa.png" alt="Auswärtiges Amt" height="32">
+      </div>
     </div>
   </section>
 
@@ -373,20 +380,16 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
       <p class="kapitel">Kapitel 03</p>
       <h1><span data-lang-de>Lage &amp; Anfahrt</span><span data-lang-cs>Místo a doprava</span></h1>
     </div>
-    <div class="map-ph">
-      <div class="map-ph-inner">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span><span data-lang-de>Karte · Platzhalter</span><span data-lang-cs>Mapa · zástupný prvek</span></span>
-      </div>
+    <div class="map-embed">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=13.7355%2C51.0483%2C13.7485%2C51.0533&amp;layer=mapnik&amp;marker=51.0508%2C13.7420" title="Karte: Hilton Hotel Dresden, An der Frauenkirche 5" loading="lazy"></iframe>
     </div>
     <div class="venue">
       <p class="vname">Hilton Hotel Dresden</p>
       <p class="vaddr">An der Frauenkirche 5<br>01067 Dresden</p>
-      <a class="maplink" href="#">
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hilton+Dresden%2C+An+der+Frauenkirche+5%2C+01067+Dresden" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
         <span data-lang-de>In Karten öffnen</span><span data-lang-cs>Otevřít v mapách</span>
       </a>
-      <p class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Odkaz bude doplněn</span></p>
     </div>
     <div class="travel-list">
       <div class="travel-item">
@@ -421,6 +424,13 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
       <p class="lead"><span data-lang-de>Keynotes, Podiumsgäste und Referierende des Forums.</span><span data-lang-cs>Keynote, hosté panelů a přednášející fóra.</span></p>
     </div>
     <div class="speaker-groups">
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Hauptmoderation</span><span data-lang-cs>Hlavní moderace</span></span><span class="sgroup-when"><span data-lang-de>Tag 1 &amp; 2</span><span data-lang-cs>1. &amp; 2. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname"><span data-lang-de>Wird noch bekannt gegeben</span><span data-lang-cs>Bude oznámeno</span></p><p class="srole"><span data-lang-de>Moderation durch das gesamte Programm</span><span data-lang-cs>Moderace celým programem</span></p></div></div>
+        </div>
+      </div>
 
       <div>
         <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Eröffnung &amp; Keynote</span><span data-lang-cs>Zahájení a keynote</span></span><span class="sgroup-when"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span></div>
@@ -482,24 +492,36 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     </div>
     <div class="forum-list">
       <div class="forum-card">
-        <div class="fhead" style="background:var(--rf-navy)"><p class="fno">Fachforum 1</p><p class="ftitle"><span data-lang-de>INTERREG</span><span data-lang-cs>INTERREG</span></p></div>
+        <div class="fphoto">
+          <img src="uploads/forum-workshop.jpg" alt="" loading="lazy">
+          <span class="fnum">1</span>
+        </div>
         <div class="fbody">
-          <p><span data-lang-de>Grenzüberschreitende Förderung und Zusammenarbeit: Was funktioniert, was blockiert — und wie lässt sich der Instrumentenkasten für die Zukunft schärfen?</span><span data-lang-cs>Přeshraniční podpora a spolupráce: co funguje, co blokuje — a jak nástroje zlepšit do budoucna?</span></p>
-          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">EUREGIO EGRENSIS</span></div>
+          <p class="ftitle"><span data-lang-de>Grenzüberschreitende Förderung &amp; Zusammenarbeit</span><span data-lang-cs>Přeshraniční podpora a spolupráce</span></p>
+          <p class="fquestion"><span data-lang-de>Was funktioniert, was blockiert — und wie schärfen wir den Instrumentenkasten für die Zukunft?</span><span data-lang-cs>Co funguje, co blokuje — a jak zlepšit nástroje do budoucna?</span></p>
+          <div class="forg"><span class="fval">EUREGIO EGRENSIS</span></div>
         </div>
       </div>
       <div class="forum-card">
-        <div class="fhead" style="background:var(--rf-crimson)"><p class="fno">Fachforum 2</p><p class="ftitle"><span data-lang-de>SPRACHE</span><span data-lang-cs>JAZYK</span></p></div>
+        <div class="fphoto">
+          <img src="uploads/forum-workshop.jpg" alt="" loading="lazy">
+          <span class="fnum">2</span>
+        </div>
         <div class="fbody">
-          <p><span data-lang-de>Nachbarsprachige Bildung und ein gemeinsamer Bildungsraum: Wo stehen wir 2026 — und was braucht es für den nächsten Schritt?</span><span data-lang-cs>Jazykové vzdělávání sousedů a společný vzdělávací prostor: kde jsme v roce 2026 — a co je třeba pro další krok?</span></p>
-          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">Stiftung IBZ · LaNa</span></div>
+          <p class="ftitle"><span data-lang-de>Nachbarsprachige Bildung &amp; gemeinsamer Bildungsraum</span><span data-lang-cs>Jazykové vzdělávání sousedů a společný vzdělávací prostor</span></p>
+          <p class="fquestion"><span data-lang-de>Wo stehen wir 2026? Was hat sich seit Liberec verändert — und was nicht?</span><span data-lang-cs>Kde jsme v roce 2026? Co se změnilo od Liberce — a co ne?</span></p>
+          <div class="forg"><span class="fval">Stiftung IBZ · LaNa</span></div>
         </div>
       </div>
       <div class="forum-card">
-        <div class="fhead" style="background:var(--rf-navy)"><p class="fno">Fachforum 3</p><p class="ftitle"><span data-lang-de>ZIVILGESELLSCHAFT</span><span data-lang-cs>OBČANSKÁ SPOLEČNOST</span></p></div>
+        <div class="fphoto">
+          <img src="uploads/forum-workshop.jpg" alt="" loading="lazy">
+          <span class="fnum">3</span>
+        </div>
         <div class="fbody">
-          <p><span data-lang-de>Begegnung, Netzwerke und Engagement: Welche Formate fehlen, wo sind die Lücken — und wie stärken wir die Zivilgesellschaft im Grenzraum?</span><span data-lang-cs>Setkávání, sítě a angažovanost: jaké formáty chybí, kde jsou mezery — a jak posílit občanskou společnost v příhraničí?</span></p>
-          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">DT-Zukunftsfonds (DTZF)</span></div>
+          <p class="ftitle"><span data-lang-de>Begegnung, Netzwerke &amp; Engagement</span><span data-lang-cs>Setkávání, sítě a angažovanost</span></p>
+          <p class="fquestion"><span data-lang-de>Welche Formate fehlen, wo sind die Lücken — und wie stärken wir die Zivilgesellschaft im Grenzraum?</span><span data-lang-cs>Jaké formáty chybí, kde jsou mezery — a jak posílit občanskou společnost v příhraničí?</span></p>
+          <div class="forg"><span class="fval">DT-Zukunftsfonds (DTZF)</span></div>
         </div>
       </div>
     </div>
@@ -550,11 +572,11 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     <div class="partner-groups">
       <div>
         <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Durchführung</span><span data-lang-cs>Realizace</span></p>
-        <div class="pgroup-grid cols-1"><div class="partner-item"><span>Stiftung IBZ St. Marienthal</span></div></div>
+        <div class="pgroup-grid cols-1"><div class="partner-item"><img src="assets/logo-ibz.png" alt="Stiftung IBZ St. Marienthal"></div></div>
       </div>
       <div>
         <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Partner</span><span data-lang-cs>Partner</span></p>
-        <div class="pgroup-grid cols-1"><div class="partner-item"><span>Auswärtiges Amt</span></div></div>
+        <div class="pgroup-grid cols-1"><div class="partner-item"><img src="assets/logo-aa.png" alt="Auswärtiges Amt"></div></div>
       </div>
       <div>
         <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Mit Unterstützung von</span><span data-lang-cs>S podporou</span></p>
@@ -583,18 +605,10 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     <div class="screen-head">
       <p class="kapitel">Kapitel 09</p>
       <h1><span data-lang-de>Marktplatz</span><span data-lang-cs>Tržiště</span></h1>
+      <p class="lead" style="line-height:1.55"><span data-lang-de>Wir sammeln Poster von allen Partnern ein — für mehr Vernetzung und Kooperation im Grenzraum.</span><span data-lang-cs>Sbíráme plakáty od všech partnerů — pro lepší propojení a spolupráci v příhraničí.</span></p>
     </div>
-    <div class="eval-body">
-      <div class="qr-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <span><span data-lang-de>Poster folgen</span><span data-lang-cs>Plakáty budou doplněny</span></span>
-      </div>
-      <p class="lead"><span data-lang-de>Wir sammeln Poster von allen Partnern ein — sichtbar für alle Teilnehmenden während der Pausen an der Posterwand, für mehr Vernetzung und Kooperation im Grenzraum.</span><span data-lang-cs>Sbíráme plakáty od všech partnerů — viditelné pro všechny účastníky o přestávkách na nástěnce, pro lepší propojení a spolupráci v příhraničí.</span></p>
-      <a class="eval-cta" href="#">
-        <span data-lang-de>Poster einreichen</span><span data-lang-cs>Odeslat plakát</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <p class="soon"><span data-lang-de>Kontakt &amp; Format folgen</span><span data-lang-cs>Kontakt a formát budou doplněny</span></p>
+    <div class="board-list">
+      <a class="board-link" href="#"><span class="icon" style="background:var(--rf-crimson)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><div class="info"><p class="btitle"><span data-lang-de>Poster-Marktplatz</span><span data-lang-cs>Tržiště plakátů</span></p><p class="bsub"><span data-lang-de>Alle Partnerposter auf einen Blick</span><span data-lang-cs>Všechny plakáty partnerů na jednom místě</span></p></div><span class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Odkaz bude doplněn</span></span></a>
     </div>
   </section>
 
