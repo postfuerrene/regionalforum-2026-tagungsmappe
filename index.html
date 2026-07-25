@@ -261,6 +261,7 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
       <a class="tile tile-sand" href="#results"><span class="no">06</span><span class="label"><span data-lang-de>Ergebnissicherung</span><span data-lang-cs>Zajištění výsledků</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       <a class="tile tile-sand" href="#eval"><span class="no">07</span><span class="label"><span data-lang-de>Evaluation</span><span data-lang-cs>Evaluace</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       <a class="tile tile-sand" href="#partners"><span class="no">08</span><span class="label"><span data-lang-de>Partner</span><span data-lang-cs>Partneři</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#marketplace"><span class="no">09</span><span class="label"><span data-lang-de>Marktplatz</span><span data-lang-cs>Tržiště</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
 
     <div class="home-footer">
@@ -577,11 +578,31 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     </div>
   </section>
 
+  <!-- ============ 09 MARKTPLATZ ============ -->
+  <section class="screen scr" id="screen-marketplace" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 09</p>
+      <h1><span data-lang-de>Marktplatz</span><span data-lang-cs>Tržiště</span></h1>
+    </div>
+    <div class="eval-body">
+      <div class="qr-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span><span data-lang-de>Poster folgen</span><span data-lang-cs>Plakáty budou doplněny</span></span>
+      </div>
+      <p class="lead"><span data-lang-de>Wir sammeln Poster von allen Partnern ein — sichtbar für alle Teilnehmenden während der Pausen an der Posterwand, für mehr Vernetzung und Kooperation im Grenzraum.</span><span data-lang-cs>Sbíráme plakáty od všech partnerů — viditelné pro všechny účastníky o přestávkách na nástěnce, pro lepší propojení a spolupráci v příhraničí.</span></p>
+      <a class="eval-cta" href="#">
+        <span data-lang-de>Poster einreichen</span><span data-lang-cs>Odeslat plakát</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="soon"><span data-lang-de>Kontakt &amp; Format folgen</span><span data-lang-cs>Kontakt a formát budou doplněny</span></p>
+    </div>
+  </section>
+
 </div>
 
 <script>
 (function(){
-  var SCREENS = ['home','welcome','program','location','speakers','forums','results','eval','partners'];
+  var SCREENS = ['home','welcome','program','location','speakers','forums','results','eval','partners','marketplace'];
   var TITLES = {
     welcome:  ['Herzlich willkommen', 'Srdečně vítejte'],
     program:  ['Tagungsprogramm', 'Program konference'],
@@ -591,6 +612,7 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     results:  ['Ergebnissicherung', 'Zajištění výsledků'],
     eval:     ['Evaluation', 'Evaluace'],
     partners: ['Partner', 'Partneři'],
+    marketplace: ['Marktplatz', 'Tržiště'],
   };
   var BASE_TITLE = '4. Deutsch-Tschechisches Regionalforum';
   var topbarHome = document.getElementById('topbarHome');
