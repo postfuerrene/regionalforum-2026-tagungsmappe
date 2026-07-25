@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4. Deutsch-Tschechisches Regionalforum — Tagungsmappe</title>
+<meta name="description" content="Ihre digitale Tagungsmappe zum 4. Deutsch-Tschechischen Regionalforum, 3.–4. November 2026 in Dresden.">
+<meta name="theme-color" content="#072039">
+<link rel="icon" href="assets/logo-signet-circle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* ============================================================
+   Design tokens — Regionalforum Design System
+   ============================================================ */
+:root{
+  --rf-crimson:#8B0F0F; --rf-crimson-deep:#6E0B0B; --rf-crimson-soft:#A83232; --rf-crimson-glow:#E2897E; --rf-crimson-tint:#F3E3E3;
+  --rf-navy:#072039; --rf-navy-deep:#04162A; --rf-navy-soft:#1C3A57; --rf-navy-tint:#E2E7EC;
+  --rf-sand:#F4EFE6; --rf-sand-deep:#E7DECF; --rf-white:#FFFFFF; --rf-ink:#1A1410;
+  --rf-n-0:#FFFFFF; --rf-n-50:#FAF7F1; --rf-n-100:#F4EFE6; --rf-n-200:#E7DECF; --rf-n-300:#D2C7B4;
+  --rf-n-400:#A99E8B; --rf-n-500:#5F5849; --rf-n-600:#564E43; --rf-n-700:#3A342C; --rf-n-800:#241F19; --rf-n-900:#1A1410;
+  --text-body:var(--rf-n-800); --text-muted:var(--rf-n-500);
+  --shadow-sm:0 2px 6px rgba(7,32,57,.08); --shadow-md:0 8px 24px rgba(7,32,57,.10); --shadow-lg:0 18px 48px rgba(7,32,57,.14);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --radius-sm:12px; --radius-md:16px; --radius-lg:20px;
+  --font-display:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --font-sans:'Jost','Futura','Century Gothic',-apple-system,system-ui,sans-serif;
+  --topbar-h:66px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#cfc6b4;font-family:var(--font-sans),system-ui,sans-serif;color:var(--text-body);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+a{color:var(--rf-crimson);text-decoration:none}
+a:not([class]):hover{color:var(--rf-crimson-soft)}
+button{font-family:inherit}
+img{max-width:100%;display:block}
+svg{stroke-width:1.75}
+:focus-visible{outline:2px solid var(--rf-crimson);outline-offset:2px}
+
+/* language visibility — DE default, toggled by body.lang-cs */
+[data-lang-cs]{display:none}
+body.lang-cs [data-lang-de]{display:none}
+body.lang-cs [data-lang-cs]{display:revert}
+
+/* language pill */
+.langpill{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.4);border-radius:22px;flex:none}
+.langpill button{position:relative;border:0;cursor:pointer;font:600 11px var(--font-sans);letter-spacing:.1em;padding:9px 14px;background:transparent;color:rgba(255,255,255,.7);transition:background-color .25s var(--ease-out),color .25s var(--ease-out),transform .28s var(--ease-spring)}
+.langpill button:active{transform:scale(.88);transition:transform .08s ease-out}
+.langpill button:first-child{border-radius:22px 0 0 22px}
+.langpill button:last-child{border-radius:0 22px 22px 0}
+.langpill button::after{content:'';position:absolute;top:-7px;bottom:-7px;left:0;right:0}
+.langpill button[data-lang="de"]{background:#fff;color:var(--rf-navy)}
+body.lang-cs .langpill button[data-lang="de"]{background:transparent;color:rgba(255,255,255,.7)}
+body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-navy)}
+.langpill-sm{transform:scale(.92)}
+
+@keyframes scrIn{from{opacity:0}to{opacity:1}}
+.scr{animation:scrIn .34s var(--ease-out) both}
+@media (prefers-reduced-motion:reduce){.scr{animation:none}}
+
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--rf-sand);box-shadow:0 0 80px rgba(7,32,57,.18);position:relative}
+
+/* ============ TOP BAR ============ */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(7,32,57,.82);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);color:#fff}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){.topbar{background:var(--rf-navy)}}
+.topbar-home[hidden],.topbar-sub[hidden]{display:none}
+.topbar-home{display:flex;align-items:center;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top)) 18px 13px;gap:12px}
+.topbar-home-left{display:flex;align-items:center;gap:11px;min-width:0}
+.topbar-home-text{min-width:0;font:500 12.5px/1.25 var(--font-sans)}
+.topbar-home-title{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-home-sub{display:block;color:rgba(255,255,255,.6);font-size:11px}
+.topbar-sub{display:flex;align-items:center;justify-content:space-between;padding:calc(11px + env(safe-area-inset-top)) 14px 11px 8px;gap:10px}
+.back-btn{display:flex;align-items:center;gap:6px;background:transparent;border:0;color:#fff;cursor:pointer;font:500 13px var(--font-sans);padding:12px 10px;flex:none}
+.topbar-sub-title{flex:1;min-width:0;text-align:center;font:600 15px/1.2 var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ============ SCREENS ============ */
+.screen{padding:0 0 calc(40px + env(safe-area-inset-bottom))}
+.screen[hidden]{display:none}
+.screen-head{background:var(--rf-navy);color:#fff;padding:26px 24px 28px}
+.kapitel{font:500 10.5px var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--rf-crimson-glow);margin:0 0 12px}
+.screen-head h1{font:600 30px/1.05 var(--font-display);margin:0}
+.screen-head p.lead{font:400 14px/1.5 var(--font-sans);opacity:.75;margin:12px 0 0}
+.screen-head p.note{font:400 12.5px/1.5 var(--font-sans);opacity:.6;margin:8px 0 0;font-style:italic}
+
+/* ============ HOME ============ */
+.welcome-band{display:block;cursor:pointer;position:relative;overflow:hidden;color:#fff;background-image:linear-gradient(180deg,rgba(7,32,57,.58),rgba(4,22,42,.88)),url('uploads/hero-dresden.jpg');background-size:cover;background-position:center 58%;padding:34px 24px 40px;transition:filter .14s}
+.welcome-band:active{filter:brightness(.88)}
+.welcome-band svg.wave{position:absolute;left:-6px;bottom:-4px;width:180px;height:96px;opacity:.28}
+.welcome-band .kapitel{opacity:.9;position:relative}
+.welcome-band h1{font:600 33px/1.03 var(--font-display);margin:0;position:relative}
+.welcome-band p.lede{font:400 14.5px/1.5 var(--font-sans);opacity:.92;margin:15px 0 0;position:relative;max-width:30ch}
+.welcome-band .cta{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font:500 12px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;position:relative}
+
+.tile-stack{background:var(--rf-sand-deep);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.tile{display:flex;align-items:center;gap:16px;padding:19px 20px;cursor:pointer;border-radius:var(--radius-lg);transition:transform .28s var(--ease-spring),filter .14s}
+.tile:hover{filter:brightness(1.03)}
+.tile:active{transform:scale(.97);filter:brightness(.96);transition:transform .08s ease-out,filter .1s}
+.tile .no{font:600 12px var(--font-sans);letter-spacing:.14em;width:24px;flex:none}
+.tile .label{flex:1;font:600 20px/1.12 var(--font-display)}
+.tile svg{flex:none}
+.tile-sand{background:var(--rf-sand);color:var(--rf-navy);box-shadow:var(--shadow-sm)}
+.tile-sand .no{color:var(--rf-crimson)}
+.tile-sand svg{opacity:.4}
+
+.home-footer{background:var(--rf-navy-deep);color:rgba(255,255,255,.75);padding:26px 24px 34px;text-align:center}
+.home-footer img{width:46px;height:46px;margin:0 auto 14px}
+.home-footer .claim-de{font:400 15px/1.4 var(--font-display);font-style:italic;color:#fff;margin:0}
+.home-footer .claim-cs{font:400 14px/1.4 var(--font-display);font-style:italic;color:var(--rf-crimson-glow);margin:2px 0 0}
+.home-footer .fine{font:400 11px/1.5 var(--font-sans);letter-spacing:.04em;margin:16px 0 0;color:rgba(255,255,255,.55)}
+
+/* ============ WELCOME ============ */
+.welcome-hero{position:relative;overflow:hidden;color:#fff;background-image:linear-gradient(180deg,rgba(7,32,57,.55),rgba(7,32,57,.82)),url('uploads/hero-dresden.jpg');background-size:cover;background-position:center 55%;padding:30px 24px 34px}
+.wortmarke{display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;padding:4px 0 24px;border-bottom:1px solid var(--rf-sand-deep)}
+.wortmarke span{font:600 16px/1.2 var(--font-display);color:var(--rf-navy)}
+.wortmarke .rule{width:38px;height:2px;background:var(--rf-crimson);border-radius:2px}
+.body-copy{padding:26px 24px 40px}
+.body-copy p{font:400 16px/1.62 var(--font-sans);color:var(--text-body);margin:24px 0 0}
+.body-copy p:first-of-type{margin-top:24px}
+.body-copy .claim{font:400 16px/1.6 var(--font-display);font-style:italic;color:var(--rf-crimson);margin:22px 0 0}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:26px}
+.chip{background:#fff;border-radius:var(--radius-md);padding:15px 16px;box-shadow:var(--shadow-sm)}
+.chip .chip-label{font:500 10px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:9px 0 2px}
+.chip .chip-value{font:600 14px var(--font-sans);color:var(--rf-navy);margin:0}
+
+/* ============ PROGRAM ============ */
+.day-toggle{position:sticky;top:calc(var(--topbar-h) + env(safe-area-inset-top));z-index:10;width:100%;border:0;cursor:pointer;text-align:left;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:11px;transition:transform .28s var(--ease-spring),filter .14s}
+.day-toggle:active{filter:brightness(.9);transform:scale(.985);transition:transform .08s ease-out,filter .1s}
+.day-toggle.d1{background:var(--rf-crimson)}
+.day-toggle.d2{background:var(--rf-navy);margin-top:8px}
+.day-toggle .daynum{font:600 20px var(--font-display)}
+.day-toggle .daysub{flex:1;font:400 12px var(--font-sans);opacity:.9}
+.day-toggle .chevron{transition:transform .2s;flex:none}
+.day-toggle.open .chevron{transform:rotate(180deg)}
+.day-panel[hidden]{display:none}
+.day-panel{padding:6px 16px 0}
+.prog-row{display:flex;gap:14px;padding:16px 8px;border-bottom:1px solid var(--rf-sand-deep)}
+.prog-row .time{flex:none;width:52px;font:600 13px/1.35 var(--font-sans);color:var(--rf-navy);padding-top:1px}
+.prog-row .tag{display:inline-block;font:600 9px var(--font-sans);letter-spacing:.11em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:7px}
+.tag-crimson{background:var(--rf-crimson);color:#fff}
+.tag-navy{background:var(--rf-navy);color:#fff}
+.tag-sand{background:var(--rf-sand-deep);color:var(--rf-navy)}
+.prog-row .ptitle{font:500 15px/1.32 var(--font-sans);color:var(--rf-navy);margin:0}
+.prog-row .pdetail{font:400 12.5px/1.5 var(--font-sans);color:var(--text-muted);margin:5px 0 0}
+
+/* ============ LOCATION ============ */
+.map-ph{height:190px;background:repeating-linear-gradient(45deg,#e7decf,#e7decf 12px,#efe8dc 12px,#efe8dc 24px);display:flex;align-items:center;justify-content:center;color:var(--rf-n-500);position:relative}
+.map-ph-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
+.map-ph-inner span{font:500 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.venue{padding:24px 24px 0}
+.venue .vname{font:600 21px/1.2 var(--font-display);color:var(--rf-navy);margin:0}
+.venue .vaddr{font:400 15px/1.55 var(--font-sans);color:var(--text-body);margin:6px 0 0}
+.venue .maplink{display:inline-flex;align-items:center;gap:9px;margin-top:16px;background:var(--rf-crimson);color:#fff;font:600 12px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;padding:13px 20px;border-radius:var(--radius-sm);transition:transform .28s var(--ease-spring)}
+.venue .maplink:active{transform:scale(.96);transition:transform .08s ease-out}
+.venue .soon{font:400 10.5px var(--font-sans);color:var(--text-muted);margin:8px 0 0;font-style:italic}
+.travel-list{padding:26px 24px 0;display:flex;flex-direction:column;gap:14px}
+.travel-item{display:flex;gap:15px;background:#fff;border-radius:var(--radius-md);padding:17px 17px;box-shadow:var(--shadow-sm)}
+.travel-item .icon{width:40px;height:40px;flex:none;border-radius:var(--radius-sm);background:var(--rf-navy-tint);color:var(--rf-navy);display:flex;align-items:center;justify-content:center}
+.travel-item .ttitle{font:600 14.5px var(--font-sans);color:var(--rf-navy);margin:0 0 3px}
+.travel-item .ttext{font:400 13px/1.5 var(--font-sans);color:var(--text-muted);margin:0}
+
+/* ============ SPEAKERS ============ */
+.speaker-groups{padding:18px 16px 0;display:flex;flex-direction:column;gap:22px}
+.sgroup-head{display:flex;align-items:baseline;gap:9px;margin:0 4px 11px}
+.sgroup-label{font:600 10px var(--font-sans);letter-spacing:.13em;text-transform:uppercase;color:var(--rf-crimson)}
+.sgroup-when{font:500 9.5px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.sgroup-people{display:flex;flex-direction:column;gap:10px}
+.speaker-card{display:flex;gap:14px;background:#fff;border-radius:var(--radius-md);padding:14px 15px;box-shadow:var(--shadow-sm)}
+.speaker-card .avatar{width:56px;height:56px;flex:none;border-radius:50%;background:var(--rf-sand);display:flex;align-items:center;justify-content:center;color:var(--rf-n-400)}
+.speaker-card .info{flex:1;min-width:0;padding-top:2px}
+.speaker-card .sname{font:600 15.5px/1.2 var(--font-sans);color:var(--rf-navy);margin:0}
+.speaker-card .sorg{font:500 12.5px/1.4 var(--font-sans);color:var(--rf-crimson);margin:4px 0 0}
+.speaker-card .srole{font:400 12px/1.45 var(--font-sans);color:var(--text-muted);margin:4px 0 0}
+.italic-note{font:400 11px/1.5 var(--font-sans);color:var(--text-muted);margin:6px 4px 0;font-style:italic}
+
+/* ============ FORUMS ============ */
+.forum-list{padding:20px 20px 0;display:flex;flex-direction:column;gap:16px}
+.forum-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
+.forum-card .fhead{color:#fff;padding:18px 20px}
+.forum-card .fhead .fno{font:600 10px var(--font-sans);letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin:0 0 5px}
+.forum-card .fhead .ftitle{font:600 22px/1.05 var(--font-display);margin:0}
+.forum-card .fbody{padding:16px 20px 19px}
+.forum-card .fbody p{font:400 14px/1.55 var(--font-sans);color:var(--text-body);margin:0}
+.forum-card .forg{display:flex;align-items:center;gap:9px;margin-top:15px;padding-top:14px;border-top:1px solid var(--rf-sand-deep)}
+.forum-card .forg .flabel{font:500 9.5px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.forum-card .forg .fval{font:600 12.5px var(--font-sans);color:var(--rf-navy)}
+
+/* ============ RESULTS ============ */
+.board-list{padding:20px 20px 0;display:flex;flex-direction:column;gap:11px}
+.board-link{display:flex;align-items:center;gap:15px;background:#fff;border-radius:var(--radius-md);padding:17px 18px;box-shadow:var(--shadow-sm);transition:transform .28s var(--ease-spring)}
+.board-link:active{transform:scale(.97);transition:transform .08s ease-out}
+.board-link .icon{width:44px;height:44px;flex:none;border-radius:var(--radius-sm);color:#fff;display:flex;align-items:center;justify-content:center}
+.board-link .info{flex:1;min-width:0}
+.board-link .btitle{font:600 15px var(--font-sans);color:var(--rf-navy);margin:0}
+.board-link .bsub{font:400 12px var(--font-sans);color:var(--text-muted);margin:3px 0 0}
+.board-link .soon{font:500 9px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--rf-crimson);flex:none}
+
+/* ============ EVAL ============ */
+.eval-body{padding:30px 24px 0;text-align:center;display:flex;flex-direction:column;align-items:center}
+.qr-box{width:150px;height:150px;border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--rf-n-400)}
+.qr-box span{font:500 9.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.eval-body .lead{font:400 15.5px/1.6 var(--font-sans);color:var(--text-body);margin:24px 0 0;max-width:32ch}
+.eval-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--rf-crimson);color:#fff;font:600 13px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;padding:15px 28px;border-radius:var(--radius-sm);transition:transform .28s var(--ease-spring)}
+.eval-cta:active{transform:scale(.96);transition:transform .08s ease-out}
+.eval-body .soon{font:400 10.5px var(--font-sans);color:var(--text-muted);margin:10px 0 0;font-style:italic}
+
+/* ============ PARTNERS ============ */
+.partner-groups{padding:24px 20px 0;display:flex;flex-direction:column;gap:24px}
+.pgroup-label{font:500 10px var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rf-crimson);margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.pgroup-label .bar{width:20px;height:2px;background:var(--rf-crimson);display:inline-block}
+.pgroup-grid{display:grid;gap:11px}
+.pgroup-grid.cols-1{grid-template-columns:1fr}
+.pgroup-grid.cols-2{grid-template-columns:1fr 1fr}
+.partner-item{background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);min-height:74px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 12px}
+.partner-item span{font:600 12.5px/1.3 var(--font-sans);color:var(--rf-navy)}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="topbar-home" id="topbarHome">
+      <div class="topbar-home-left">
+        <img src="assets/logo-signet-circle.png" alt="Signet Regionalforum" width="38" height="38">
+        <span class="topbar-home-text">
+          <span class="topbar-home-title"><span data-lang-de>4. Deutsch-Tschechisches Regionalforum</span><span data-lang-cs>4. Česko-německé regionální fórum</span></span>
+          <span class="topbar-home-sub">3.–4. Nov 2026 · Dresden</span>
+        </span>
+      </div>
+      <span class="langpill"><button type="button" data-lang="de">DE</button><button type="button" data-lang="cs">CS</button></span>
+    </div>
+    <div class="topbar-sub" id="topbarSub" hidden>
+      <a class="back-btn" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m15 18-6-6 6-6"/></svg>
+        <span data-lang-de>Übersicht</span><span data-lang-cs>Přehled</span>
+      </a>
+      <span class="topbar-sub-title"><span data-lang-de id="subTitleDe"></span><span data-lang-cs id="subTitleCs"></span></span>
+      <span class="langpill langpill-sm"><button type="button" data-lang="de">DE</button><button type="button" data-lang="cs">CS</button></span>
+    </div>
+  </div>
+
+  <!-- ============ HOME ============ -->
+  <section class="screen scr" id="screen-home">
+    <a class="welcome-band" href="#welcome">
+      <svg class="wave" viewBox="0 0 220 120" preserveAspectRatio="none"><path d="M0,78 C44,48 74,108 116,68 C150,36 184,80 220,52 L220,120 L0,120 Z" fill="#fff"/></svg>
+      <p class="kapitel">Kapitel 01</p>
+      <h1><span data-lang-de>Herzlich<br>willkommen.</span><span data-lang-cs>Srdečně<br>vítejte.</span></h1>
+      <p class="lede"><span data-lang-de>Ihre digitale Tagungsmappe zum 4. Deutsch-Tschechischen Regionalforum.</span><span data-lang-cs>Vaše digitální konferenční složka ke 4. česko-německému regionálnímu fóru.</span></p>
+      <span class="cta"><span data-lang-de>Willkommen lesen</span><span data-lang-cs>Číst uvítání</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <div class="tile-stack">
+      <a class="tile tile-sand" href="#program"><span class="no">02</span><span class="label"><span data-lang-de>Tagungsprogramm</span><span data-lang-cs>Program konference</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#location"><span class="no">03</span><span class="label"><span data-lang-de>Lage &amp; Anfahrt</span><span data-lang-cs>Místo a doprava</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#speakers"><span class="no">04</span><span class="label"><span data-lang-de>Speaker &amp; Podium</span><span data-lang-cs>Řečníci a podium</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#forums"><span class="no">05</span><span class="label"><span data-lang-de>Drei Fachforen</span><span data-lang-cs>Tři odborná fóra</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#results"><span class="no">06</span><span class="label"><span data-lang-de>Ergebnissicherung</span><span data-lang-cs>Zajištění výsledků</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#eval"><span class="no">07</span><span class="label"><span data-lang-de>Evaluation</span><span data-lang-cs>Evaluace</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="tile tile-sand" href="#partners"><span class="no">08</span><span class="label"><span data-lang-de>Partner</span><span data-lang-cs>Partneři</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+
+    <div class="home-footer">
+      <img src="assets/logo-signet-circle.png" alt="Signet Regionalforum" width="46" height="46">
+      <p class="claim-de">Dialog im Grenzraum</p>
+      <p class="claim-cs">Dialog v příhraničí</p>
+      <p class="fine"><span data-lang-de>Durchführung: Stiftung IBZ St. Marienthal · Auswärtiges Amt</span><span data-lang-cs>Realizace: Nadace IBZ St. Marienthal · Ministerstvo zahraničí</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 01 WELCOME ============ -->
+  <section class="screen scr" id="screen-welcome" hidden>
+    <div class="welcome-hero">
+      <p class="kapitel">Kapitel 01</p>
+      <h1 style="font:600 30px/1.05 var(--font-display);margin:0"><span data-lang-de>Herzlich willkommen</span><span data-lang-cs>Srdečně vítejte</span></h1>
+    </div>
+    <div class="body-copy">
+      <div class="wortmarke">
+        <span>Deutsch-Tschechisches Regionalforum</span>
+        <span class="rule"></span>
+        <span>Česko-německé regionální fórum</span>
+      </div>
+      <p><span data-lang-de>Willkommen zum 4. Deutsch-Tschechischen Regionalforum. Vom 3. bis 4. November 2026 kommen in Dresden 150–200 Akteurinnen und Akteure aus Verwaltung, Zivilgesellschaft, Wirtschaft und Wissenschaft beider Länder zusammen.</span><span data-lang-cs>Vítejte na 4. česko-německém regionálním fóru. Od 3. do 4. listopadu 2026 se v Drážďanech sejde 150–200 aktérů ze správy, občanské společnosti, hospodářství a vědy obou zemí.</span></p>
+      <p><span data-lang-de>Zwei Tage — <b style="font-weight:600;color:var(--rf-navy)">Bestandsaufnahme</b> und <b style="font-weight:600;color:var(--rf-navy)">Perspektive</b> —, um Netzwerke zu stärken, Herausforderungen zu benennen und gemeinsam Handlungsansätze für den Grenzraum zu erarbeiten. Diese Mappe begleitet Sie durch Programm, Fachforen und Vor-Ort-Infos.</span><span data-lang-cs>Dva dny — <b style="font-weight:600;color:var(--rf-navy)">analýza stavu</b> a <b style="font-weight:600;color:var(--rf-navy)">perspektiva</b> —, abychom posílili sítě, pojmenovali výzvy a společně vypracovali kroky pro příhraniční region. Tato složka vás provede programem, odbornými fóry a informacemi na místě.</span></p>
+      <p class="claim"><span data-lang-de>Wir freuen uns auf den Dialog mit Ihnen.</span><span data-lang-cs>Těšíme se na dialog s vámi.</span></p>
+      <div class="chips">
+        <div class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <p class="chip-label"><span data-lang-de>Termin</span><span data-lang-cs>Termín</span></p>
+          <p class="chip-value">3.–4. Nov 2026</p>
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p class="chip-label"><span data-lang-de>Ort</span><span data-lang-cs>Místo</span></p>
+          <p class="chip-value">Hilton Dresden</p>
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg>
+          <p class="chip-label"><span data-lang-de>Sprachen</span><span data-lang-cs>Jazyky</span></p>
+          <p class="chip-value"><span data-lang-de>DE·CZ gedolmetscht</span><span data-lang-cs>tlumočeno DE·CZ</span></p>
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <p class="chip-label"><span data-lang-de>Teilnehmende</span><span data-lang-cs>Účastníci</span></p>
+          <p class="chip-value">150–200</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PROGRAMM ============ -->
+  <section class="screen scr" id="screen-program" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 02</p>
+      <h1><span data-lang-de>Tagungsprogramm</span><span data-lang-cs>Program konference</span></h1>
+      <p class="lead">3.–4. November 2026 · Hilton Hotel Dresden</p>
+      <p class="note"><span data-lang-de>Programmentwurf — alle Namen sind Vorschläge.</span><span data-lang-cs>Návrh programu — všechna jména jsou návrhy.</span></p>
+    </div>
+
+    <button type="button" class="day-toggle d1" aria-expanded="false" aria-controls="day1panel">
+      <span class="daynum"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span>
+      <span class="daysub"><span data-lang-de>Di, 3. Nov · Bestandsaufnahme</span><span data-lang-cs>út 3. 11. · Analýza stavu</span></span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="day-panel" id="day1panel" hidden>
+      <div class="prog-row"><span class="time">09:00</span><div><span class="tag tag-sand"><span data-lang-de>Ankunft</span><span data-lang-cs>Příchod</span></span><p class="ptitle"><span data-lang-de>Ankunft · Anmeldung · Imbiss</span><span data-lang-cs>Příchod · registrace · občerstvení</span></p><p class="pdetail">Road Show</p></div></div>
+      <div class="prog-row"><span class="time">10:00</span><div><span class="tag tag-navy"><span data-lang-de>Eröffnung</span><span data-lang-cs>Zahájení</span></span><p class="ptitle"><span data-lang-de>Begrüßung &amp; Eröffnung</span><span data-lang-cs>Přivítání a zahájení</span></p><p class="pdetail">Auswärtiges Amt (Videobotschaft StM EU · Anja Wallau) · CZE · IBZ · Stadt Dresden — Hauptmoderation</p></div></div>
+      <div class="prog-row"><span class="time">10:20</span><div><span class="tag tag-navy"><span data-lang-de>Programm</span><span data-lang-cs>Program</span></span><p class="ptitle"><span data-lang-de>Einführung in das Programm</span><span data-lang-cs>Úvod do programu</span></p><p class="pdetail">Ablauf &amp; Posterwand — Hauptmoderation</p></div></div>
+      <div class="prog-row"><span class="time">10:35</span><div><span class="tag tag-crimson"><span data-lang-de>Keynote</span><span data-lang-cs>Keynote</span></span><p class="ptitle">Keynote AGEG</p><p class="pdetail">Martin Guillermo-Ramirez (AEBR)</p></div></div>
+      <div class="prog-row"><span class="time">10:45</span><div><span class="tag tag-crimson"><span data-lang-de>Podium</span><span data-lang-cs>Panel</span></span><p class="ptitle"><span data-lang-de>MFR und Finanzierung grenzüberschreitender Kooperationen</span><span data-lang-cs>VFR a financování přeshraniční spolupráce</span></p><p class="pdetail">M. Guillermo-Ramirez (AEBR) · N. Verschelde / S. Pohlová (DG Regio) · M. Buršík (CZE) · K. Michel MdB · MEP · AA / BMWE</p></div></div>
+      <div class="prog-row"><span class="time">12:00</span><div><span class="tag tag-sand"><span data-lang-de>Pause</span><span data-lang-cs>Přestávka</span></span><p class="ptitle"><span data-lang-de>Mittagspause</span><span data-lang-cs>Polední přestávka</span></p><p class="pdetail">Posterwand · Road Show · Vernetzung</p></div></div>
+      <div class="prog-row"><span class="time">13:00</span><div><span class="tag tag-navy"><span data-lang-de>Fachforen</span><span data-lang-cs>Fóra</span></span><p class="ptitle"><span data-lang-de>Fachforen-Phase · Bestandsaufnahme</span><span data-lang-cs>Fáze fór · analýza stavu</span></p><p class="pdetail">INTERREG (EGRENSIS) · SPRACHE (IBZ-LaNa) · ZIVILGESELLSCHAFT (DTZF)</p></div></div>
+      <div class="prog-row"><span class="time">15:00</span><div><span class="tag tag-sand"><span data-lang-de>Pause</span><span data-lang-cs>Přestávka</span></span><p class="ptitle"><span data-lang-de>Kaffeepause</span><span data-lang-cs>Přestávka na kávu</span></p><p class="pdetail">Posterwand · Road Show · Vernetzung</p></div></div>
+      <div class="prog-row"><span class="time">15:30</span><div><span class="tag tag-navy"><span data-lang-de>Plenum</span><span data-lang-cs>Plénum</span></span><p class="ptitle"><span data-lang-de>Ergebnisse der Fachforen</span><span data-lang-cs>Výsledky fór</span></p><p class="pdetail">10 Min / Forum — Hauptmoderation</p></div></div>
+      <div class="prog-row"><span class="time">16:00</span><div><span class="tag tag-crimson"><span data-lang-de>Einblicke</span><span data-lang-cs>Vhledy</span></span><p class="ptitle"><span data-lang-de>Blick über den Tellerrand — Cross-Border-Beispiele</span><span data-lang-cs>Pohled za hranice — přeshraniční příklady</span></p><p class="pdetail">DEU-FRA AGZ (C. Haury) · DEU-DNK (S. Freitag) · CZE-AUT Südböhmen (V. Karasová)</p></div></div>
+      <div class="prog-row"><span class="time">17:00</span><div><span class="tag tag-sand"><span data-lang-de>Pause</span><span data-lang-cs>Přestávka</span></span><p class="ptitle"><span data-lang-de>Kurze Kaffeepause</span><span data-lang-cs>Krátká přestávka</span></p></div></div>
+      <div class="prog-row"><span class="time">17:15</span><div><span class="tag tag-crimson"><span data-lang-de>Podium</span><span data-lang-cs>Panel</span></span><p class="ptitle"><span data-lang-de>DEU-CZE Zusammenarbeit als Teil des europäischen Zusammenhalts — was ist seit Chemnitz passiert?</span><span data-lang-cs>Česko-německá spolupráce jako součást evropské soudržnosti — co se stalo od Saské Kamenice?</span></p><p class="pdetail">CZE · J. Ofner (Sachsen / Prag) · Bayern · A. Wallau (AA) · P. Branda (AdR) · EUREGIO EGRENSIS · L. Tarabová (TANDEM)</p></div></div>
+      <div class="prog-row"><span class="time">18:35</span><div><span class="tag tag-navy"><span data-lang-de>Abschluss</span><span data-lang-cs>Závěr</span></span><p class="ptitle"><span data-lang-de>Abschließende Worte für Tag 1</span><span data-lang-cs>Závěrečná slova k 1. dni</span></p><p class="pdetail"><span data-lang-de>Weiterer Ablauf</span><span data-lang-cs>Další program</span></p></div></div>
+      <div class="prog-row"><span class="time">18:45</span><div><span class="tag tag-sand"><span data-lang-de>Rahmen</span><span data-lang-cs>Doprovod</span></span><p class="ptitle"><span data-lang-de>Sektempfang</span><span data-lang-cs>Přípitek</span></p></div></div>
+      <div class="prog-row"><span class="time">19:15</span><div><span class="tag tag-sand"><span data-lang-de>Rahmen</span><span data-lang-cs>Doprovod</span></span><p class="ptitle"><span data-lang-de>Kulturprogramm</span><span data-lang-cs>Kulturní program</span></p><p class="pdetail">DTZF</p></div></div>
+      <div class="prog-row"><span class="time">20:00</span><div><span class="tag tag-sand"><span data-lang-de>Rahmen</span><span data-lang-cs>Doprovod</span></span><p class="ptitle"><span data-lang-de>Abendessen</span><span data-lang-cs>Večeře</span></p></div></div>
+      <div class="prog-row" style="border-bottom:0"><span class="time">22:00</span><div><span class="tag tag-navy"><span data-lang-de>Ende</span><span data-lang-cs>Konec</span></span><p class="ptitle"><span data-lang-de>Ende Tag 1</span><span data-lang-cs>Konec 1. dne</span></p></div></div>
+    </div>
+
+    <button type="button" class="day-toggle d2" aria-expanded="false" aria-controls="day2panel">
+      <span class="daynum"><span data-lang-de>Tag 2</span><span data-lang-cs>2. den</span></span>
+      <span class="daysub"><span data-lang-de>Mi, 4. Nov · Perspektive</span><span data-lang-cs>st 4. 11. · Perspektiva</span></span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="day-panel" id="day2panel" hidden>
+      <div class="prog-row"><span class="time">08:30</span><div><span class="tag tag-sand"><span data-lang-de>Ankunft</span><span data-lang-cs>Příchod</span></span><p class="ptitle"><span data-lang-de>Ankommen &amp; Kaffee</span><span data-lang-cs>Příchod a káva</span></p><p class="pdetail">Posterwand · Road Show · Vernetzung</p></div></div>
+      <div class="prog-row"><span class="time">09:00</span><div><span class="tag tag-navy"><span data-lang-de>Eröffnung</span><span data-lang-cs>Zahájení</span></span><p class="ptitle"><span data-lang-de>Begrüßung &amp; Rückblick Tag 1</span><span data-lang-cs>Přivítání a ohlédnutí za 1. dnem</span></p><p class="pdetail"><span data-lang-de>Einführung in das Programm</span><span data-lang-cs>Úvod do programu</span></p></div></div>
+      <div class="prog-row"><span class="time">09:15</span><div><span class="tag tag-navy"><span data-lang-de>Fachforen</span><span data-lang-cs>Fóra</span></span><p class="ptitle"><span data-lang-de>Fachforen-Phase · Lösungen</span><span data-lang-cs>Fáze fór · řešení</span></p><p class="pdetail">INTERREG (EGRENSIS) · SPRACHE (IBZ-LaNa) · ZIVILGESELLSCHAFT (DTZF)</p></div></div>
+      <div class="prog-row"><span class="time">10:30</span><div><span class="tag tag-sand"><span data-lang-de>Pause</span><span data-lang-cs>Přestávka</span></span><p class="ptitle"><span data-lang-de>Kaffeepause</span><span data-lang-cs>Přestávka na kávu</span></p><p class="pdetail">Posterwand · Road Show · Vernetzung</p></div></div>
+      <div class="prog-row"><span class="time">11:00</span><div><span class="tag tag-navy"><span data-lang-de>Plenum</span><span data-lang-cs>Plénum</span></span><p class="ptitle"><span data-lang-de>Ergebnisse der Fachforen</span><span data-lang-cs>Výsledky fór</span></p><p class="pdetail"><span data-lang-de>5 Min / Forum — kurz &amp; prägnant</span><span data-lang-cs>5 min / fórum — krátce a stručně</span></p></div></div>
+      <div class="prog-row"><span class="time">11:15</span><div><span class="tag tag-crimson"><span data-lang-de>Podium</span><span data-lang-cs>Panel</span></span><p class="ptitle"><span data-lang-de>Zukunft der DEU-CZE Zusammenarbeit — Regionalforum 2.0?</span><span data-lang-cs>Budoucnost česko-německé spolupráce — Regionální fórum 2.0?</span></p><p class="pdetail">E. Kaiser (Ostbeauftragte) · J. Gavdunová (Vejprty) · StS Schöffel (BY) · StS Handschuh (SN) · MdL Dr. Hopp · A. Pfeffer Ferklová (Karlovy Vary) · Hauptmann Půta</p></div></div>
+      <div class="prog-row"><span class="time">12:30</span><div><span class="tag tag-navy"><span data-lang-de>Abschluss</span><span data-lang-cs>Závěr</span></span><p class="ptitle"><span data-lang-de>Wrap Up</span><span data-lang-cs>Shrnutí</span></p></div></div>
+      <div class="prog-row"><span class="time">12:35</span><div><span class="tag tag-sand"><span data-lang-de>Rahmen</span><span data-lang-cs>Doprovod</span></span><p class="ptitle"><span data-lang-de>Filmvorführung</span><span data-lang-cs>Promítání filmu</span></p></div></div>
+      <div class="prog-row"><span class="time">12:40</span><div><span class="tag tag-crimson">Evaluation</span><p class="ptitle">Evaluierung</p><p class="pdetail">Sli.do o. Ä.</p></div></div>
+      <div class="prog-row"><span class="time">12:45</span><div><span class="tag tag-navy"><span data-lang-de>Abschluss</span><span data-lang-cs>Závěr</span></span><p class="ptitle"><span data-lang-de>Abschließende Worte &amp; Verabschiedung</span><span data-lang-cs>Závěrečná slova a rozloučení</span></p></div></div>
+      <div class="prog-row"><span class="time">13:00</span><div><span class="tag tag-sand"><span data-lang-de>Rahmen</span><span data-lang-cs>Doprovod</span></span><p class="ptitle"><span data-lang-de>Mittagessen · Abfahrt</span><span data-lang-cs>Oběd · odjezd</span></p><p class="pdetail"><span data-lang-de>evtl. Lunchpakete</span><span data-lang-cs>případně obědové balíčky</span></p></div></div>
+      <div class="prog-row" style="border-bottom:0"><span class="time">14:00</span><div><span class="tag tag-navy"><span data-lang-de>Ende</span><span data-lang-cs>Konec</span></span><p class="ptitle"><span data-lang-de>Ende</span><span data-lang-cs>Konec</span></p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 LAGE & ANFAHRT ============ -->
+  <section class="screen scr" id="screen-location" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 03</p>
+      <h1><span data-lang-de>Lage &amp; Anfahrt</span><span data-lang-cs>Místo a doprava</span></h1>
+    </div>
+    <div class="map-ph">
+      <div class="map-ph-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-crimson)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="30" height="30"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><span data-lang-de>Karte · Platzhalter</span><span data-lang-cs>Mapa · zástupný prvek</span></span>
+      </div>
+    </div>
+    <div class="venue">
+      <p class="vname">Hilton Hotel Dresden</p>
+      <p class="vaddr">An der Frauenkirche 5<br>01067 Dresden</p>
+      <a class="maplink" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        <span data-lang-de>In Karten öffnen</span><span data-lang-cs>Otevřít v mapách</span>
+      </a>
+      <p class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Odkaz bude doplněn</span></p>
+    </div>
+    <div class="travel-list">
+      <div class="travel-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 11h14M8 20l2-3M16 20l-2-3"/><circle cx="9" cy="13.5" r="1"/><circle cx="15" cy="13.5" r="1"/></svg></span>
+        <div>
+          <p class="ttitle"><span data-lang-de>Bahn &amp; ÖPNV</span><span data-lang-cs>Vlak &amp; MHD</span></p>
+          <p class="ttext"><span data-lang-de>Fernverkehr bis Dresden Hauptbahnhof (ca. 1,3 km, 15 Min. zu Fuß). Mit der Straßenbahn ab Hbf Linie 3 oder 7 bis „Pirnaischer Platz" (ca. 10 Min.), dann 4 Min. zu Fuß — alternativ Linie 1/2/4 bis „Altmarkt". Ab Bahnhof Neustadt: Tram 3.</span><span data-lang-cs>Dálkovou dopravou na hlavní nádraží Drážďany (cca 1,3 km, 15 min pěšky). Tramvají z hl. nádraží linkou 3 nebo 7 na „Pirnaischer Platz" (cca 10 min), pak 4 min pěšky — nebo linkou 1/2/4 na „Altmarkt". Z nádraží Neustadt: tramvaj 3.</span></p>
+        </div>
+      </div>
+      <div class="travel-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L9 11l-2 3H4l1.5 2.5L8 18l1-2 3-2 3.5 4.7a.5.5 0 0 0 .8-.5Z"/></svg></span>
+        <div>
+          <p class="ttitle"><span data-lang-de>Flugzeug</span><span data-lang-cs>Letadlo</span></p>
+          <p class="ttext"><span data-lang-de>Ab Flughafen Dresden mit der S-Bahn S2 zum Hauptbahnhof (ca. 25 Min.), weiter mit der Straßenbahn in die Altstadt.</span><span data-lang-cs>Z letiště Drážďany S-Bahnem S2 na hlavní nádraží (cca 25 min), dále tramvají do centra.</span></p>
+        </div>
+      </div>
+      <div class="travel-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M5 17H3v-6l2-5h11l4 5v6h-2"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg></span>
+        <div>
+          <p class="ttitle"><span data-lang-de>Auto &amp; Parken</span><span data-lang-cs>Auto &amp; parkování</span></p>
+          <p class="ttext"><span data-lang-de>Anfahrt über A4 / A17, Ausfahrt Dresden-Altstadt. Hoteleigene Tiefgarage direkt am Haus.</span><span data-lang-cs>Příjezd po A4 / A17, výjezd Dresden-Altstadt. Vlastní podzemní garáž hotelu přímo u budovy.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 SPEAKER & PODIUM ============ -->
+  <section class="screen scr" id="screen-speakers" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 04</p>
+      <h1><span data-lang-de>Speaker &amp; Podium</span><span data-lang-cs>Řečníci a podium</span></h1>
+      <p class="lead"><span data-lang-de>Keynotes, Podiumsgäste und Referierende des Forums.</span><span data-lang-cs>Keynote, hosté panelů a přednášející fóra.</span></p>
+    </div>
+    <div class="speaker-groups">
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Eröffnung &amp; Keynote</span><span data-lang-cs>Zahájení a keynote</span></span><span class="sgroup-when"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Anja Wallau</p><p class="sorg">Auswärtiges Amt</p><p class="srole"><span data-lang-de>Eröffnung</span><span data-lang-cs>Zahájení</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Martin Guillermo-Ramirez</p><p class="sorg">AEBR / AGEG</p><p class="srole"><span data-lang-de>Generalsekretär · Keynote</span><span data-lang-cs>Generální tajemník · keynote</span></p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Podium · MFR &amp; Finanzierung</span><span data-lang-cs>Panel · VFR a financování</span></span><span class="sgroup-when"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Martin Guillermo-Ramirez</p><p class="sorg">AEBR</p><p class="srole"><span data-lang-de>Grenzüberschreitende Kooperationen</span><span data-lang-cs>Přeshraniční spolupráce</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Nathalie Verschelde</p><p class="sorg">DG Regio</p><p class="srole"><span data-lang-de>Head of Unit D2</span><span data-lang-cs>Vedoucí oddělení D2</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Martin Buršík</p><p class="sorg">Regionalministerium CZE</p><p class="srole"><span data-lang-de>Nationalbehörde</span><span data-lang-cs>Národní orgán</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Kathrin Michel</p><p class="sorg">MdB (SPD)</p><p class="srole"><span data-lang-de>Videozuschaltung</span><span data-lang-cs>Videopřipojení</span></p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Cross-Border-Beispiele</span><span data-lang-cs>Přeshraniční příklady</span></span><span class="sgroup-when"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Caroline Haury</p><p class="sorg">AGZ DEU-FRA</p><p class="srole"><span data-lang-de>Leiterin grenzüberschr. Zusammenarbeit</span><span data-lang-cs>Vedoucí přeshraniční spolupráce</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Sven Freitag</p><p class="sorg">Cross-Border DEU-DNK</p><p class="srole"><span data-lang-de>Referent grenzüberschr. Zusammenarbeit</span><span data-lang-cs>Referent přeshraniční spolupráce</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Veronika Karasová</p><p class="sorg">CZE-AUT Südböhmen</p><p class="srole"><span data-lang-de>Regionale Zusammenarbeit</span><span data-lang-cs>Regionální spolupráce</span></p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Podium · Europäischer Zusammenhalt</span><span data-lang-cs>Panel · Evropská soudržnost</span></span><span class="sgroup-when"><span data-lang-de>Tag 1</span><span data-lang-cs>1. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Josefina Ofner</p><p class="sorg">Freistaat Sachsen</p><p class="srole"><span data-lang-de>Leiterin Verbindungsbüro Prag</span><span data-lang-cs>Vedoucí styčné kanceláře v Praze</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Anja Wallau</p><p class="sorg">Auswärtiges Amt</p><p class="srole"><span data-lang-de>Podium</span><span data-lang-cs>Panel</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Pavel Branda</p><p class="sorg">Ausschuss der Regionen</p><p class="srole"><span data-lang-de>Mitglied AdR · Gemeinderat Rádlo</span><span data-lang-cs>Člen VR · zastupitel Rádlo</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Lucie Tarabová</p><p class="sorg">TANDEM</p><p class="srole"><span data-lang-de>Leiterin Koordinierungszentrum</span><span data-lang-cs>Vedoucí koordinačního centra</span></p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sgroup-head"><span class="sgroup-label"><span data-lang-de>Podium · Zukunft / Regionalforum 2.0</span><span data-lang-cs>Panel · Budoucnost / Regionální fórum 2.0</span></span><span class="sgroup-when"><span data-lang-de>Tag 2</span><span data-lang-cs>2. den</span></span></div>
+        <div class="sgroup-people">
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Elisabeth Kaiser</p><p class="sorg">Bundesregierung</p><p class="srole"><span data-lang-de>Ostbeauftragte</span><span data-lang-cs>Zmocněnkyně pro východ</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Jitka Gavdunová</p><p class="sorg">Vejprty</p><p class="srole"><span data-lang-de>Bürgermeisterin</span><span data-lang-cs>Starostka</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Andrea Pfeffer Ferklová</p><p class="sorg">Karlovy Vary</p><p class="srole"><span data-lang-de>Bürgermeisterin</span><span data-lang-cs>Primátorka</span></p></div></div>
+          <div class="speaker-card"><div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/></svg></div><div class="info"><p class="sname">Martin Půta</p><p class="sorg">Liberecký kraj</p><p class="srole"><span data-lang-de>Hauptmann</span><span data-lang-cs>Hejtman</span></p></div></div>
+        </div>
+      </div>
+
+      <p class="italic-note"><span data-lang-de>Porträts und Kurzbiografien folgen.</span><span data-lang-cs>Portréty a krátké biografie budou doplněny.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 05 DREI FACHFOREN ============ -->
+  <section class="screen scr" id="screen-forums" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 05</p>
+      <h1><span data-lang-de>Drei Fachforen</span><span data-lang-cs>Tři odborná fóra</span></h1>
+      <p class="lead" style="line-height:1.55"><span data-lang-de>In zwei Phasen: Bestandsaufnahme &amp; Vertiefung (Tag 1), Lösungen (Tag 2). Ergebnisse werden laufend gesichert.</span><span data-lang-cs>Ve dvou fázích: analýza a prohloubení (1. den), řešení (2. den). Výsledky se průběžně zajišťují.</span></p>
+    </div>
+    <div class="forum-list">
+      <div class="forum-card">
+        <div class="fhead" style="background:var(--rf-navy)"><p class="fno">Fachforum 1</p><p class="ftitle"><span data-lang-de>INTERREG</span><span data-lang-cs>INTERREG</span></p></div>
+        <div class="fbody">
+          <p><span data-lang-de>Grenzüberschreitende Förderung und Zusammenarbeit: Was funktioniert, was blockiert — und wie lässt sich der Instrumentenkasten für die Zukunft schärfen?</span><span data-lang-cs>Přeshraniční podpora a spolupráce: co funguje, co blokuje — a jak nástroje zlepšit do budoucna?</span></p>
+          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">EUREGIO EGRENSIS</span></div>
+        </div>
+      </div>
+      <div class="forum-card">
+        <div class="fhead" style="background:var(--rf-crimson)"><p class="fno">Fachforum 2</p><p class="ftitle"><span data-lang-de>SPRACHE</span><span data-lang-cs>JAZYK</span></p></div>
+        <div class="fbody">
+          <p><span data-lang-de>Nachbarsprachige Bildung und ein gemeinsamer Bildungsraum: Wo stehen wir 2026 — und was braucht es für den nächsten Schritt?</span><span data-lang-cs>Jazykové vzdělávání sousedů a společný vzdělávací prostor: kde jsme v roce 2026 — a co je třeba pro další krok?</span></p>
+          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">Stiftung IBZ · LaNa</span></div>
+        </div>
+      </div>
+      <div class="forum-card">
+        <div class="fhead" style="background:var(--rf-navy)"><p class="fno">Fachforum 3</p><p class="ftitle"><span data-lang-de>ZIVILGESELLSCHAFT</span><span data-lang-cs>OBČANSKÁ SPOLEČNOST</span></p></div>
+        <div class="fbody">
+          <p><span data-lang-de>Begegnung, Netzwerke und Engagement: Welche Formate fehlen, wo sind die Lücken — und wie stärken wir die Zivilgesellschaft im Grenzraum?</span><span data-lang-cs>Setkávání, sítě a angažovanost: jaké formáty chybí, kde jsou mezery — a jak posílit občanskou společnost v příhraničí?</span></p>
+          <div class="forg"><span class="flabel"><span data-lang-de>Organisation</span><span data-lang-cs>Organizace</span></span><span class="fval">DT-Zukunftsfonds (DTZF)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 ERGEBNISSICHERUNG ============ -->
+  <section class="screen scr" id="screen-results" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 06</p>
+      <h1><span data-lang-de>Ergebnissicherung</span><span data-lang-cs>Zajištění výsledků</span></h1>
+      <p class="lead" style="line-height:1.55"><span data-lang-de>Alle Fachforen-Ergebnisse werden live in digitalen Boards gesichert — zugänglich für alle, im Plenum projiziert.</span><span data-lang-cs>Všechny výsledky odborných fór se živě zaznamenávají do digitálních nástěnek — přístupné všem, promítané v plénu.</span></p>
+    </div>
+    <div class="board-list">
+      <a class="board-link" href="#"><span class="icon" style="background:var(--rf-navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></span><div class="info"><p class="btitle">Padlet · INTERREG</p><p class="bsub"><span data-lang-de>Ergebnisse Fachforum 1</span><span data-lang-cs>Výsledky fóra 1</span></p></div><span class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Bude doplněn</span></span></a>
+      <a class="board-link" href="#"><span class="icon" style="background:var(--rf-crimson)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></span><div class="info"><p class="btitle">Padlet · SPRACHE</p><p class="bsub"><span data-lang-de>Ergebnisse Fachforum 2</span><span data-lang-cs>Výsledky fóra 2</span></p></div><span class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Bude doplněn</span></span></a>
+      <a class="board-link" href="#"><span class="icon" style="background:var(--rf-navy)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></span><div class="info"><p class="btitle">Padlet · ZIVILGESELLSCHAFT</p><p class="bsub"><span data-lang-de>Ergebnisse Fachforum 3</span><span data-lang-cs>Výsledky fóra 3</span></p></div><span class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Bude doplněn</span></span></a>
+      <a class="board-link" href="#"><span class="icon" style="background:var(--rf-crimson)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></span><div class="info"><p class="btitle"><span data-lang-de>Digitale Posterwand</span><span data-lang-cs>Digitální nástěnka</span></p><p class="bsub"><span data-lang-de>Steckbriefe &amp; Vernetzung</span><span data-lang-cs>Profily a síťování</span></p></div><span class="soon"><span data-lang-de>Link folgt</span><span data-lang-cs>Bude doplněn</span></span></a>
+    </div>
+  </section>
+
+  <!-- ============ 07 EVALUATION ============ -->
+  <section class="screen scr" id="screen-eval" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 07</p>
+      <h1>Evaluation</h1>
+    </div>
+    <div class="eval-body">
+      <div class="qr-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 21v.01M17 21h.01M21 17h.01"/></svg>
+        <span><span data-lang-de>QR-Code folgt</span><span data-lang-cs>QR kód bude doplněn</span></span>
+      </div>
+      <p class="lead"><span data-lang-de>Ihre Rückmeldung zählt. Am Ende von Tag 2 bitten wir Sie um eine kurze Evaluation des Forums — digital in wenigen Minuten.</span><span data-lang-cs>Vaše zpětná vazba se počítá. Na konci 2. dne vás poprosíme o krátkou evaluaci fóra — digitálně během několika minut.</span></p>
+      <a class="eval-cta" href="#">
+        <span data-lang-de>Zur Evaluation</span><span data-lang-cs>K evaluaci</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="soon"><span data-lang-de>Sli.do o. Ä. · Link folgt</span><span data-lang-cs>Sli.do apod. · odkaz bude doplněn</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 08 PARTNER ============ -->
+  <section class="screen scr" id="screen-partners" hidden>
+    <div class="screen-head">
+      <p class="kapitel">Kapitel 08</p>
+      <h1><span data-lang-de>Partner</span><span data-lang-cs>Partneři</span></h1>
+      <p class="lead" style="line-height:1.55"><span data-lang-de>Das Regionalforum wird getragen von starken Partnern beider Länder.</span><span data-lang-cs>Regionální fórum podporují silní partneři obou zemí.</span></p>
+    </div>
+    <div class="partner-groups">
+      <div>
+        <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Durchführung</span><span data-lang-cs>Realizace</span></p>
+        <div class="pgroup-grid cols-1"><div class="partner-item"><span>Stiftung IBZ St. Marienthal</span></div></div>
+      </div>
+      <div>
+        <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Partner</span><span data-lang-cs>Partner</span></p>
+        <div class="pgroup-grid cols-1"><div class="partner-item"><span>Auswärtiges Amt</span></div></div>
+      </div>
+      <div>
+        <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Mit Unterstützung von</span><span data-lang-cs>S podporou</span></p>
+        <div class="pgroup-grid cols-2">
+          <div class="partner-item"><span>Deutsch-Tschechischer Zukunftsfonds</span></div>
+          <div class="partner-item"><span>EUREGIO EGRENSIS</span></div>
+          <div class="partner-item"><span>Freistaat Sachsen</span></div>
+          <div class="partner-item"><span>Freistaat Bayern</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Workshop-Träger &amp; Mitwirkende</span><span data-lang-cs>Nositelé workshopů a spolupracující</span></p>
+        <div class="pgroup-grid cols-2">
+          <div class="partner-item"><span>LaNa</span></div>
+          <div class="partner-item"><span>TANDEM</span></div>
+          <div class="partner-item"><span>AGEG / AEBR</span></div>
+          <div class="partner-item"><span>Stadt Dresden</span></div>
+        </div>
+      </div>
+      <p class="italic-note"><span data-lang-de>Platzhalter — echte Partnerlogos folgen.</span><span data-lang-cs>Zástupné prvky — skutečná loga partnerů budou doplněna.</span></p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var SCREENS = ['home','welcome','program','location','speakers','forums','results','eval','partners'];
+  var TITLES = {
+    welcome:  ['Herzlich willkommen', 'Srdečně vítejte'],
+    program:  ['Tagungsprogramm', 'Program konference'],
+    location: ['Lage & Anfahrt', 'Místo a doprava'],
+    speakers: ['Speaker & Podium', 'Řečníci a podium'],
+    forums:   ['Drei Fachforen', 'Tři odborná fóra'],
+    results:  ['Ergebnissicherung', 'Zajištění výsledků'],
+    eval:     ['Evaluation', 'Evaluace'],
+    partners: ['Partner', 'Partneři'],
+  };
+  var BASE_TITLE = '4. Deutsch-Tschechisches Regionalforum';
+  var topbarHome = document.getElementById('topbarHome');
+  var topbarSub = document.getElementById('topbarSub');
+  var subTitleDe = document.getElementById('subTitleDe');
+  var subTitleCs = document.getElementById('subTitleCs');
+
+  function applyRoute(){
+    var id = decodeURIComponent(location.hash.slice(1)) || 'home';
+    if (SCREENS.indexOf(id) === -1) id = 'home';
+    var isHome = id === 'home';
+
+    document.querySelectorAll('.screen').forEach(function(s){
+      var match = s.id === 'screen-' + id;
+      s.hidden = !match;
+      if (match){ s.classList.remove('scr'); void s.offsetWidth; s.classList.add('scr'); }
+    });
+
+    topbarHome.hidden = !isHome;
+    topbarSub.hidden = isHome;
+    if (!isHome){
+      subTitleDe.textContent = TITLES[id][0];
+      subTitleCs.textContent = TITLES[id][1];
+      document.title = TITLES[id][0] + ' — ' + BASE_TITLE;
+    } else {
+      document.title = BASE_TITLE + ' — Tagungsmappe';
+    }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', applyRoute);
+  document.addEventListener('DOMContentLoaded', applyRoute);
+
+  function setLang(l){
+    var isCs = l === 'cs';
+    document.body.classList.toggle('lang-cs', isCs);
+    document.documentElement.lang = isCs ? 'cs' : 'de';
+    try { localStorage.setItem('rf2026-lang', l); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-lang]');
+    if (btn) setLang(btn.getAttribute('data-lang'));
+  });
+  var savedLang = 'de';
+  try { savedLang = localStorage.getItem('rf2026-lang') || 'de'; } catch(e){}
+  setLang(savedLang);
+
+  document.querySelectorAll('.day-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = !btn.classList.contains('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+    });
+  });
+})();
+</script>
+</body>
+</html>
