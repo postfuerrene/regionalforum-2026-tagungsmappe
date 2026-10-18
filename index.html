@@ -203,8 +203,8 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 
 /* ============ EVAL ============ */
 .eval-body{padding:30px 24px 0;text-align:center;display:flex;flex-direction:column;align-items:center}
-.qr-box{width:150px;height:150px;border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-md);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--rf-n-400)}
-.qr-box span{font:500 9.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.qr-box{width:168px;height:168px;border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center}
+.qr-box img{width:132px;height:132px;display:block}
 .eval-body .lead{font:400 15.5px/1.6 var(--font-sans);color:var(--text-body);margin:24px 0 0;max-width:32ch}
 .eval-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--rf-crimson);color:#fff;font:600 13px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;padding:15px 28px;border-radius:var(--radius-sm);transition:transform .28s var(--ease-spring)}
 .eval-cta:active{transform:scale(.96);transition:transform .08s ease-out}
@@ -555,16 +555,12 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
       <h1>Evaluation</h1>
     </div>
     <div class="eval-body">
-      <div class="qr-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--rf-navy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 21v.01M17 21h.01M21 17h.01"/></svg>
-        <span><span data-lang-de>QR-Code folgt</span><span data-lang-cs>QR kód bude doplněn</span></span>
-      </div>
+      <a class="qr-box" href="https://eu.jotform.com/262670959731064" target="_blank" rel="noopener" aria-label="Evaluation öffnen / Otevřít evaluaci"><img src="assets/qr-evaluation.svg" alt="QR-Code zur Evaluation" width="132" height="132"></a>
       <p class="lead"><span data-lang-de>Ihre Rückmeldung zählt. Am Ende von Tag 2 bitten wir Sie um eine kurze Evaluation des Forums — digital in wenigen Minuten.</span><span data-lang-cs>Vaše zpětná vazba se počítá. Na konci 2. dne vás poprosíme o krátkou evaluaci fóra — digitálně během několika minut.</span></p>
-      <a class="eval-cta" href="#">
+      <a class="eval-cta" href="https://eu.jotform.com/262670959731064" target="_blank" rel="noopener">
         <span data-lang-de>Zur Evaluation</span><span data-lang-cs>K evaluaci</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
-      <p class="soon"><span data-lang-de>Sli.do o. Ä. · Link folgt</span><span data-lang-cs>Sli.do apod. · odkaz bude doplněn</span></p>
     </div>
   </section>
 
