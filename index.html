@@ -223,6 +223,64 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
 .partner-item.span2{grid-column:1/-1}
 .partner-item img.logo.svg{height:48px;width:auto;max-width:100%;max-height:none}
 .partner-item span{font:600 12.5px/1.3 var(--font-sans);color:var(--rf-navy)}
+
+/* ============ MARKTPLATZ · KOOPERATIONSPROFILE ============ */
+.profile-section{padding:28px 16px 0}
+.profile-intro{margin:0 4px 14px}
+.profile-intro .pgroup-label{margin-bottom:8px}
+.profile-intro p{font:400 13.5px/1.5 var(--font-sans);color:var(--text-muted);margin:0}
+.profile-list{display:flex;flex-direction:column;gap:11px}
+.pcard{display:flex;align-items:center;gap:14px;background:#fff;border-radius:var(--radius-md);padding:14px 14px 14px 14px;box-shadow:var(--shadow-sm);color:var(--rf-navy);transition:transform .28s var(--ease-spring)}
+.pcard:active{transform:scale(.97);transition:transform .08s ease-out}
+.pavatar{flex:none;width:64px;height:78px;border-radius:12px;overflow:hidden;background:var(--rf-navy);color:#fff;display:flex;align-items:center;justify-content:center;font:600 22px var(--font-display);letter-spacing:.02em}
+.pavatar img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.pavatar.contain{background:#fff;box-shadow:inset 0 0 0 1px var(--rf-sand-deep)}
+.pavatar.contain img{object-fit:contain;padding:6px}
+.pinfo{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.pname{font:600 18px/1.15 var(--font-display);color:var(--rf-navy)}
+.porg{font:500 12.5px/1.35 var(--font-sans);color:var(--rf-crimson)}
+.pplace{font:500 9.5px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
+.ptag{display:inline-block;font:600 8.5px var(--font-sans);letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;background:var(--rf-sand-deep);color:var(--rf-navy)}
+.pteaser{font:400 12.5px/1.45 var(--font-sans);color:var(--text-muted);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pcard>svg{flex:none;opacity:.4}
+
+.profile-head{display:flex;gap:16px;align-items:flex-start}
+.profile-head .pavatar{width:84px;height:108px;border-radius:14px;font-size:30px}
+.profile-head .phead-text{flex:1;min-width:0}
+.profile-head h1{font:600 26px/1.1 var(--font-display);margin:0}
+.profile-head .porg{color:#fff;opacity:.88;font:500 14px/1.35 var(--font-sans);margin:8px 0 0}
+.profile-head .porg2{font:400 12px/1.4 var(--font-sans);color:#fff;opacity:.7;margin:2px 0 0}
+.profile-head .pplace{color:#fff;opacity:.72;margin:8px 0 0}
+.profile-head .ptags{margin-top:10px}
+.profile-head .ptag{background:rgba(255,255,255,.14);color:#fff}
+.profile-head .kapitel{margin-bottom:14px}
+.profile-body{padding:24px 20px 0;display:flex;flex-direction:column;gap:22px}
+.pblock h2{font:600 10px var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rf-crimson);margin:0 0 10px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.pblock h2 .bar{width:20px;height:2px;background:var(--rf-crimson);display:inline-block}
+.pblock h2 .cs-label{color:var(--text-muted)}
+.pcopy p{font:400 15px/1.6 var(--font-sans);color:var(--text-body);margin:0 0 10px}
+.pcopy ul{margin:0 0 10px;padding-left:18px}
+.pcopy li{font:400 15px/1.55 var(--font-sans);color:var(--text-body);margin:0 0 7px}
+.pcopy a{color:var(--rf-crimson);text-decoration:underline;text-underline-offset:2px;word-break:break-word}
+.pcopy>:last-child{margin-bottom:0}
+.pain-box{background:var(--rf-navy);color:#fff;border-radius:var(--radius-md);padding:18px 18px 20px}
+.pain-box h2{color:var(--rf-crimson-glow)}
+.pain-box h2 .bar{background:var(--rf-crimson-glow)}
+.pain-box h2 .cs-label{color:rgba(255,255,255,.7)}
+.pain-box .pcopy p,.pain-box .pcopy li{color:#fff}
+.pcontact{background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:6px 18px}
+.pcontact a,.pcontact .pc-row{display:flex;flex-direction:column;gap:2px;padding:13px 0;border-bottom:1px solid var(--rf-sand-deep);min-height:44px;color:var(--rf-navy)}
+.pcontact>*:last-child{border-bottom:0}
+.pcontact .pc-label{font:500 9.5px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.pcontact .pc-value{font:500 15px/1.35 var(--font-sans);color:var(--rf-crimson);word-break:break-word}
+.pnav{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:4px}
+.pnav a{display:flex;flex-direction:column;gap:3px;background:var(--rf-sand-deep);border-radius:var(--radius-md);padding:13px 14px;min-height:44px;color:var(--rf-navy);transition:transform .28s var(--ease-spring)}
+.pnav a:active{transform:scale(.97);transition:transform .08s ease-out}
+.pnav a.next{text-align:right}
+.pnav .pn-label{font:500 9.5px var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.pnav .pn-name{font:600 15px/1.2 var(--font-display)}
+.pnav .pn-spacer{visibility:hidden}
 </style>
 </head>
 <body>
@@ -241,9 +299,9 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
       <span class="langpill"><button type="button" data-lang="de">DE</button><button type="button" data-lang="cs">CS</button></span>
     </div>
     <div class="topbar-sub" id="topbarSub" hidden>
-      <a class="back-btn" href="#">
+      <a class="back-btn" id="backBtn" href="#">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m15 18-6-6 6-6"/></svg>
-        <span data-lang-de>Übersicht</span><span data-lang-cs>Přehled</span>
+        <span data-lang-de id="backDe">Übersicht</span><span data-lang-cs id="backCs">Přehled</span>
       </a>
       <span class="topbar-sub-title"><span data-lang-de id="subTitleDe"></span><span data-lang-cs id="subTitleCs"></span></span>
       <span class="langpill langpill-sm"><button type="button" data-lang="de">DE</button><button type="button" data-lang="cs">CS</button></span>
@@ -627,13 +685,29 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     <div class="board-list">
       <a class="board-link" href="https://form.jotform.com/262046046408049" target="_blank" rel="noopener"><span class="icon" style="background:var(--rf-crimson)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><div class="info"><p class="btitle"><span data-lang-de>Poster-Marktplatz</span><span data-lang-cs>Tržiště plakátů</span></p><p class="bsub"><span data-lang-de>Pinnwand-Anmeldung für Partner</span><span data-lang-cs>Přihláška na nástěnku pro partnery</span></p></div></a>
     </div>
+    <div class="profile-section">
+      <div class="profile-intro">
+        <p class="pgroup-label"><span class="bar"></span><span data-lang-de>Kooperationsprofile</span><span data-lang-cs>Profily pro spolupráci</span></p>
+        <p><span data-lang-de>Partner stellen sich vor: Das kann ich anbieten, das suche ich. Tippen Sie auf ein Profil, um alle Angaben und Kontaktdaten zu sehen.</span><span data-lang-cs>Partneři se představují: co mohu nabídnout, co hledám. Klepnutím na profil zobrazíte všechny údaje a kontakt.</span></p>
+      </div>
+      <div class="profile-list" id="profileList"></div>
+      <p class="italic-note"><span data-lang-de>Weitere Profile folgen.</span><span data-lang-cs>Další profily budou doplněny.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ MARKTPLATZ · PROFIL ============ -->
+  <section class="screen scr" id="screen-profile" hidden>
+    <div id="profileView"></div>
   </section>
 
 </div>
 
 <script>
 (function(){
-  var SCREENS = ['home','welcome','program','location','speakers','forums','eval','partners','marketplace'];
+  var SCREENS = ['home','welcome','program','location','speakers','forums','eval','partners','marketplace','profile'];
+  /*PROFILES:BEGIN*/
+  var RF = {"tags":{"bildung":["Bildung","Vzdělávání"],"zivilgesellschaft":["Zivilgesellschaft","Občanská společnost"],"verwaltung":["Verwaltung","Veřejná správa"],"wirtschaft":["Wirtschaft","Hospodářství"],"wissenschaft":["Wissenschaft & Forschung","Věda a výzkum"],"sonstiges":["Sonstiges","Ostatní"]},"profiles":[{"slug":"bernd-sommer","name":"Bernd Sommer","org":"Stadt Waldsassen","place":"Waldsassen/ Bayern","tags":["verwaltung"],"photo":"assets/profiles/bernd-sommer.jpg","fit":"cover","offer":[{"t":"p","v":"Als grenzüberschreitendes Oberzentrum Walsassen/Cheb verfügen wir über umfangreiche Kontakte und Erfahrungen. An kaum einem anderen Ort der deutsch-tschechischen Grenze leben auf engstem Raum soviele Menschen beider Nationen so eng miteinander."}],"seek":[{"t":"p","v":"Im Bereich Vernetzung ÖPNV"}],"pain":[{"t":"p","v":"Grenzüberschreitender ÖPNV als auch Gesundheitsversorgung-/Rettungswesen"}],"other":null,"email":"bernd.sommer@waldsassen.de","web":"waldsassen.de","phone":"(096) 328-8100"},{"slug":"kristyna-pregel","name":"Kristýna Pregel (TINA)","org":"Prostor pro rozvoj, z.s.","place":"Tschechien","tags":["bildung","zivilgesellschaft"],"photo":"assets/profiles/kristyna-pregel.jpg","fit":"cover","offer":{"cs":[{"t":"li","v":"zkušenosti s rozvojem projektů, koordinací projektů a podáváním projektových žádostí"},{"t":"li","v":"kontakty na německé a české organizace, vzdělávací instituce a aktéry*ky v oblasti práce s mládeží"},{"t":"li","v":"síť mladých lidí, pedagožek a pedagogů, dobrovolnic a dobrovolníků a projektových partnerů*ek"},{"t":"li","v":"zkušenosti s inkluzivními a nízkoprahovými vzdělávacími nabídkami"},{"t":"li","v":"metody a materiály pro interaktivní a zážitkovou vzdělávací práci"},{"t":"li","v":"zkušenosti s využíváním digitálních nástrojů a umělé inteligence ve vzdělávání a projektové práci"},{"t":"li","v":"ochota sdílet a zapojit vlastní zdroje, materiály, metody a zkušenosti z projektů"},{"t":"li","v":"možnost společně rozvíjet a realizovat česko-německé projekty a akce"},{"t":"li","v":"zájem o dlouhodobá partnerství, propojování aktérů a udržitelnou spolupráci"}],"de":[{"t":"li","v":"Erfahrung in der Projektentwicklung, Projektkoordination und Antragstellung"},{"t":"li","v":"Kontakte zu deutschen und tschechischen Organisationen, Bildungseinrichtungen und Akteur*innen der Jugendarbeit"},{"t":"li","v":"Netzwerk von Jugendlichen, Pädagoginnen, Ehrenamtlichen und Projektpartnerinnen"},{"t":"li","v":"Erfahrung mit inklusiven und niedrigschwelligen Bildungsangeboten"},{"t":"li","v":"Methoden und Materialien für interaktive und erlebnisorientierte Bildungsarbeit"},{"t":"li","v":"Erfahrung mit digitalen Tools und KI in der Bildungs- und Projektarbeit"},{"t":"li","v":"Bereitschaft, eigene Ressourcen, Materialien, Methoden und Projekterfahrungen einzubringen"},{"t":"li","v":"Möglichkeit zur Entwicklung und Erprobung gemeinsamer deutsch-tschechischer Projekte und Veranstaltungen"},{"t":"li","v":"Interesse an langfristigen Partnerschaften, Vernetzung und nachhaltiger Zusammenarbeit"}]},"seek":{"cs":[{"t":"li","v":"nové partnerské organizace pro nové projekty"},{"t":"li","v":"lektorky a lektory workshopů na různá témata"},{"t":"li","v":"mladé týmerky a týmery, kteří chtějí realizovat vlastní projekty nebo získat zkušenosti při našich aktivitách"},{"t":"li","v":"účastnice a účastníci pro projekt DIGITÁLNĚ. STRUKTUROVANĚ. SPOLU."},{"t":"p","v":"Česko-německý odborný seminář v Lipsku, 19.–21. 2. 2027 – přihlašování již probíhá!"},{"t":"a","v":"https://www.prostorprorozvoj.cz/de/event/digital-strukturiert-zusammen-63/register"}],"de":[{"t":"li","v":"Neue Partnerorganisationen für neue Projekte"},{"t":"li","v":"Workshopleiter*innen für verschiedenen Themen"},{"t":"li","v":"junge Teamer*innen, die gern eigene Projekte umsetzten wollen oder bei unseren Aktionen Erfahrungen sammeln möchten"},{"t":"li","v":"Teilenehmende für das Projekt: DIGITAL. STRUKTURIERT. ZUSAMMEN."},{"t":"p","v":"Deutsch-tschechisches Fachseminar in Leipzig, 19.-21.2.2027 -> die Anmeldung läuft!"},{"t":"a","v":"https://www.prostorprorozvoj.cz/de/event/digital-strukturiert-zusammen-63/register"}]},"pain":{"cs":[{"t":"li","v":"stabilita našeho interního týmu"},{"t":"li","v":"udržitelné financování spolku"},{"t":"li","v":"nedostatek účastníků na akcích"}],"de":[{"t":"li","v":"Stabilität unseres internen Teams"},{"t":"li","v":"Nachhaltige Finanzierung unseres Vereins"},{"t":"li","v":"Mangel an Teilnehmer*innen bei unseren Veranstaltungen"}]},"other":null,"email":"tina@prostorprorozvoj.cz","web":"www.prostorprorozvoj.cz","phone":null},{"slug":"jana-kutilkova","name":"Jana Kutilkova","org":"Agentur für Arbeit Bayreuth-Hof","place":"Selb, Deutschland","tags":["verwaltung"],"photo":"assets/profiles/jana-kutilkova.jpg","fit":"cover","offer":[{"t":"p","v":"Beratung und Vermittlung von EU Bürgern, welche im Nachbarland arbeiten möchten."},{"t":"p","v":"Projekt mit Auszubildenden aus Tschechien, welche zwei Monate bei oberfränkischen HOGA Betrieben Praktikum machen."}],"seek":[{"t":"p","v":"Austausch mit Menschen, welche sich mit dem Thema \"Grenzpendler\" beschäftigen."}],"pain":[{"t":"p","v":"Neue EU Verordnung bzgl. Anspruch auf Arbeitslosengeld bei Grenzgängern"}],"other":null,"email":"jana.kutilkova@arbeitsagentur.de","web":"https://www.arbeitsagentur.de/vor-ort/bayreuth-hof/eures-welcome-center","phone":null},{"slug":"richard-neugebauer","name":"Richard Neugebauer","org":"Landesversammlung der deutschen Vereine in der Tschechischen Republik. e.V.","place":"Tschechien","tags":["bildung","zivilgesellschaft"],"photo":null,"fit":null,"offer":[{"t":"p","v":"Jugend, Sprachwettbewerbe"}],"seek":[{"t":"p","v":"Partner für Trecks"}],"pain":[{"t":"p","v":"die bundesdeutschen Partner"}],"other":null,"email":"info@landesversammlung.cz","web":"landesversammlung.cz","phone":"(420) 233-4441"},{"slug":"tina-winkel","name":"Tina Winkel","org":"Europe Direct Chemnitz","place":"Chemnitz, Deutschland","tags":["bildung"],"photo":null,"fit":null,"offer":[{"t":"p","v":"Vermittlung von Projektpartnern, Kontakte und Netzwerk"}],"seek":[{"t":"p","v":"Unterstützung bei der Finanzierung einer langfristigen Kooperation zum Thema Theater in der schulischen Bildung (Theaterproduktionen des Činoherní studio Usti nad Labem sollen 1x im Jahr in Chemnitz residieren und Schulklassen gezeigt & im Unterricht vor/nachbereitet werden)"}],"pain":[{"t":"p","v":"finanzielle Unterstützung / Trägerverein vor Ort, der die Antragstellung und Verwaltung der finanziellen Mittel übernimmt"}],"other":null,"email":"europe-direct@stadt-chemnitz.de","web":null,"phone":null},{"slug":"heinrich-may","name":"Heinrich May","org":"Regierun","place":"REGENSBURG","tags":["verwaltung"],"photo":null,"fit":null,"offer":[{"t":"p","v":"Erfahrungen in der Bayerisch-Tschechischen Zusammenarbeit"},{"t":"p","v":"Projektförderung über Interreg A, B und C"}],"seek":[{"t":"p","v":"Erfahrungen zu EVTZ"}],"pain":[{"t":"p","v":"Unterstützung der engeren Vernetzung von Wirtschaft und Wissenschaft durch staatliche Institutionen"}],"other":null,"email":"heinrich.may@reg-opf.bayern.de","web":null,"phone":"(016) 221-2611"},{"slug":"jana-moebius","name":"Jana Möbius","org":"Volkshochschule Dresden e.V.","place":"01067 Dresden, Annenstraße 10","tags":["bildung"],"photo":"assets/profiles/jana-moebius.jpg","fit":"cover","offer":[{"t":"p","v":"systematische Tschechischkurse für Anfänger und Fortgeschrittene in Präsenz oder im Onlineformat (1x pro Woche oder als Intensivkurse)"}],"seek":[{"t":"p","v":"Kursleitende für Tschechisch auf Honorarbasis, insbesondere für den Präsenzbereich am Abend"}],"pain":[{"t":"p","v":"Finden von guten Kursleitenden auf Honorarbasis"}],"other":null,"email":"jana.moebius@vhs-dresden.de","web":"www.vhs-dresden.de","phone":null},{"slug":"andreas-kawa","name":"Dr.-Ing. Andreas G. Kawa","org":"Independent Researcher","place":"Görlitz","tags":["bildung","wirtschaft","wissenschaft","sonstiges"],"photo":"assets/profiles/andreas-kawa.jpg","fit":"cover","offer":[{"t":"p","v":"Forschung und konzeptionelle Expertise zu Stadt- und Regionalentwicklung, industriellem Strukturwandel und grenzüberschreitender Kooperation."},{"t":"p","v":"Schwerpunkte: regionale Transformationsfähigkeit, Standort- und Infrastrukturentwicklung, kritische Abhängigkeiten sowie neue Ansätze zur Bewertung industrieller Standortreife (Site Readiness)."},{"t":"p","v":"Besonderes Interesse gilt der Frage, unter welchen Bedingungen aus vorhandenen regionalen Ressourcen und Netzwerken neue Entwicklungsmöglichkeiten entstehen."}],"seek":[{"t":"p","v":"Austausch und Kooperation mit Forschungseinrichtungen, regionalen Entwicklungsakteuren und grenzüberschreitenden Netzwerken."},{"t":"p","v":"Gesucht werden Praxispartner und Fallstudien zur Untersuchung regionaler Transformationsprozesse, institutioneller Zusammenarbeit und industrieller Standortentwicklung, insbesondere im deutsch-polnisch-tschechischen Grenzraum."}],"pain":[{"t":"p","v":"Viele Regionen verfügen über Infrastruktur, Fachwissen, Netzwerke und Fördermöglichkeiten. Dennoch entstehen daraus nicht automatisch neue wirtschaftliche Entwicklungsperspektiven."},{"t":"p","v":"Die zentrale Herausforderung besteht darin, kritische Abhängigkeiten und institutionelle Hemmnisse frühzeitig zu erkennen und regionale Handlungsfähigkeit unter Bedingungen des Strukturwandels zu entwickeln. Besonders relevant ist dies für schrumpfende Regionen und grenzüberschreitende Räume."}],"other":[{"t":"p","v":"Aktuelle Forschungsschwerpunkte: regionale Transformationsprozesse, industrielle Standortreife (Site Readiness), räumlich-industrielle Mindestlasten und die Entstehung neuer regionaler Entwicklungsmöglichkeiten."},{"t":"p","v":"Besonderes Interesse am deutsch-polnisch-tschechischen Grenzraum als Untersuchungs- und Kooperationsraum."}],"email":"Andreas.G.Kawa@t-online.de","web":null,"phone":"(017) 939-7816"},{"slug":"linda-straub","name":"Linda Straub","org":"Cojc gGmbH (sprich: Tscheutsch)","place":"Deutschland, Tschechien","tags":["bildung","zivilgesellschaft"],"photo":"assets/profiles/linda-straub.jpg","fit":"cover","offer":[{"t":"p","v":"Erfahrung in der Konzeption und Durchführung deutsch-tschechischer theaterpädagogischer Projekte. Unsere Projekte verbinden künstlerisches Arbeiten mit aktuellen gesellschaftlichen Fragestellungen und eröffnen jungen Menschen die Möglichkeit, ihre Perspektiven und Meinungen künstlerisch auszudrücken. Die Formate reichen von Theaterprojekten über verschiedene künstlerische Ansätze bis hin zur Erlebnispädagogik."},{"t":"p","v":"Ich verfüge über Kontakte zu Schulen, deutsch-tschechischen Organisationen und Bildungspartnern, insbesondere im bayerisch-tschechischen Grenzraum, sowie zu Künstler und Kulturinstitutionen."}],"seek":[{"t":"p","v":"Wir suchen neue Kooperationspartner, insbesondere Schulen, Bildungseinrichtungen und deutsch-tschechische Organisationen, die unsere Projekte an interessierte junge Menschen weitervermitteln und neue Gruppen für eine Teilnahme gewinnen können. Besonders wertvoll sind Kontakte zu Multiplikator:innen, die unsere Projektangebote kontinuierlich in ihren Netzwerken bekannt machen und gezielt weiterempfehlen können."},{"t":"p","v":"Außerdem suchen wir Theaterpädagog:innen und weitere künstlerisch-pädagogisch arbeitende Menschen - mit Tschechisch-  und Deutschkenntnissen - die Interesse an der Entwicklung und Durchführung gemeinsamer deutsch-tschechischer Projekte haben."}],"pain":[{"t":"p","v":"Eine zentrale Herausforderung ist die Finanzierung unserer Projekte sowie der Aufbau verlässlicher Kooperationspartnerschaften. Besonders viel Energie investieren wir in die Gewinnung neuer Teilnehmender. Uns ist wichtig, dass unsere Projekte nicht nur Menschen erreichen, die Cojc bereits kennen, sondern immer auch neue junge Menschen einbeziehen."},{"t":"p","v":"Hier würden uns Empfehlungen und die Weitergabe unserer Projektangebote durch geeignete Multiplikator:innen und Organisationen sehr helfen. Eine weitere Herausforderung ist es, zusätzliche Theaterpädagog:innen zu gewinnen, insbesondere auf deutscher Seite, um unsere Projekte gemeinsam weiterzuentwickeln und umzusetzen."}],"other":[{"t":"p","v":"Čojč schafft Begegnungsräume für junge Menschen aus Tschechien und Deutschland, in denen sie sich durch gemeinsames künstlerisches Arbeiten mit gesellschaftlichen Fragen auseinandersetzen, eigene Perspektiven entwickeln und die Sichtweisen anderer kennenlernen können. Wir verstehen Kunst und Theaterpädagogik als Mittel für Dialog, gegenseitiges Verständnis und grenzüberschreitende Zusammenarbeit."}],"email":"linda.straub@cojc.eu","web":"www.cojc.eu","phone":null},{"slug":"heide-dix","name":"Heide Dix","org":"Ortsgruppe Pro Rehefeld (Sächs. Heimatschutz e.V.)","place":"Deutschland","tags":["zivilgesellschaft"],"photo":"assets/profiles/heide-dix.jpg","fit":"contain","offer":[{"t":"p","v":"Wir sind eine neu gegründete Ortsgruppe direkt an der deutsch-tschechischen Grenze (Rehefeld/Moldava). Unser Ziel: Menschen zusammenbringen und grenzüberschreitende Projekte auf die Beine stellen."},{"t":"p","v":"Wir haben:"},{"t":"li","v":"unheimlich viele Ideen,"},{"t":"li","v":"jede Menge Enthusiasmus,"},{"t":"li","v":"tiefe regionale Wurzeln,"},{"t":"li","v":"gute Kontakte auf beiden Seiten der Grenze"},{"t":"li","v":"und vor allem Lust, gemeinsam mit unseren tschechischen Nachbarn etwas zu bewegen!"}],"seek":[{"t":"p","v":"Für unser erstes großes Festival „KULTUR GRENZENLOS / KULTURA BEZ HRANIC“ am 4. September 2027 suchen wir Menschen, die mitdenken, mitgestalten und mitorganisieren wollen. Besonders freuen wir uns über jüngere Mitstreiter mit eigenen Ideen, Mut und einer ordentlichen Portion Optimismus!"}],"pain":[{"t":"p","v":"Wir brauchen eine richtig gute zweisprachige Website – und einen direkten Draht zu Lesy ČR, den tschechischen Staatsforsten!"}],"other":null,"email":"heidedix@salus-domi.de","web":null,"phone":"+49 171 272 2443"},{"slug":"petra-kobzik","name":"Petra Kobzik","org":"Ein Jahr an der Grenze","place":"Freyung, Bayern, Deutschland","tags":["zivilgesellschaft","sonstiges"],"photo":"assets/profiles/petra-kobzik.jpg","fit":"cover","offer":[{"t":"p","v":"Ich bin eine Grenzüberschreiterin, überwinde die Grenzen und verbinde die Welten an beiden Seiten der Grenze - Vereine, Organisationen sowie Bürgerinnen und Bürger. Ich biete eine umfangreiche Expertise aus beiden Ländern, sowie Kontakte und Projektideen an."}],"seek":[{"t":"p","v":"Ich suche Interessenten, die Parter im Nachbarland suchen oder eine interessante grenzüberschreitende Projektidee haben."}],"pain":[{"t":"p","v":"Dass sich Leute an beiden Seiten der Grenze nicht trauen, den ersten Schritt zu machen und die Sprachbarriere zu überwinden."}],"other":null,"email":"kobzik@einjahrandergrenze.de","web":"https://einjahrandergrenze.de/petra-kobzik-niederbayern/","phone":null},{"slug":"oliver-trost","name":"Oliver Trost","org":"Kreisfeuerwehrverband Görlitz e.V.","place":"Landkreis Görlitz","tags":["sonstiges"],"photo":"assets/profiles/oliver-trost.jpg","fit":"cover","offer":[{"t":"li","v":"Netzwerk D-PL-CZ"},{"t":"li","v":"Mehrsprachige Feuerwehrkameraden D-CZ-PL-ENG --> \"FIREUNITY – 3 Nations – 1 Flame\""}],"seek":[{"t":"p","v":"Kontakte, die uns beim weiteren Aufbau der mehrsprachigen Kommunikationseinheit \"FIREUNITY – 3 Nations – 1 Flame\" unterstützen können."}],"pain":[{"t":"p","v":"Die richtigen Kontakte in CZ und PL (außerhalb der Feuerwehrstandorte), die das Thema der gemeinsamen Kommunikationseinheit auf Ihrer Landesseite mit pushen und unterstützen sind eher schwer zu finden."}],"other":null,"email":"internationaleza@kfv-goerlitz.de","web":"https://www.kfv-goerlitz.de/seite/535850/int.-zusammenarbeit.html","phone":null},{"slug":"regina-gellrich","name":"Dr. Regina Gellrich, Michaela Herlingová","org":"Sächsische Landesstelle für nachbarsprachige Bildung","org2":"c/o Internationales Begegnungszentrum St. Marienthal","place":"Ostritz – St. Marienthal, Deutschland/Sachsen","tags":["bildung"],"photo":"assets/profiles/regina-gellrich.jpg","fit":"cover","offer":[{"t":"li","v":"Umfassende Kompetenz im Bereich der nachbarsprachigen Bildung im d-pl-cz Grenzraum, beginnend ab der Kita (Fachexpertise, Methoden, Materialien, Fortbildungsangebote, überregionales Netzwerk, Daten für Sachsen, …)"},{"t":"li","v":"Erfahrung in der trinationalen d-pl-cz Zusammenarbeit im Bildungsbereich"},{"t":"li","v":"Fachliche Begleitung von d-pl und d-cz Projekten im Vorschulbereich"},{"t":"li","v":"Austauschformate (Aktionstage, Fachtage, …)"}],"seek":[{"t":"li","v":"Partner für die Trinationalen Aktionstage rund um Nachbarschaft und Sprachen 2027"},{"t":"li","v":"Multiplikator:innen und Interessierte an einer Multiplikatorenschulung für den Transfer von Wissen und bewährter Praxis in den Euroregionen (insbes. Methodik früher nachbarsprachiger Bildung – alltagsintegriertes Nachbarsprachbad, Sprachanimation, Kita-Partnerschaften …)"},{"t":"li","v":"Partner/Akteure und Fachaustausch zur Entwicklung von Modellen am Übergang frühkindliche Lebensphase – Grundschulphase (Hort, GTA, außerschulischer Bereich …)"},{"t":"li","v":"Finanzierungsmöglichkeiten für trinationalen d-pl-cz Fachaustausch (z. B. Grenzraumtagung 2027)"}],"pain":[{"t":"p","v":"Es braucht dauerhafte strukturelle Verankerung nachbarsprachiger Bildung im Grenzraum und entsprechende verlässliche Rahmenbedingungen über Projekte hinaus."}],"other":null,"email":"lana@ibz-marienthal.de","web":"https://www.nachbarsprachen-sachsen.eu","phone":"+49 35823 209532"}]};
+  /*PROFILES:END*/
   var TITLES = {
     welcome:  ['Herzlich willkommen', 'Srdečně vítejte'],
     program:  ['Tagungsprogramm', 'Program konference'],
@@ -643,6 +717,7 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     eval:     ['Evaluation', 'Evaluace'],
     partners: ['Partner', 'Partneři'],
     marketplace: ['Marktplatz', 'Tržiště'],
+    profile: ['Kooperationsprofil', 'Profil partnera'],
   };
   var BASE_TITLE = '4. Deutsch-Tschechisches Regionalforum';
   var topbarHome = document.getElementById('topbarHome');
@@ -650,9 +725,136 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
   var subTitleDe = document.getElementById('subTitleDe');
   var subTitleCs = document.getElementById('subTitleCs');
 
+  /* ---------- Kooperationsprofile ---------- */
+  var PROFILES = RF.profiles, TAGS = RF.tags;
+  function el(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function langSpan(lang, text){ var n = el('span', null, text); n.setAttribute('data-lang-' + lang, ''); return n; }
+  function biSpans(de, cs){ var f = document.createDocumentFragment(); f.appendChild(langSpan('de', de)); f.appendChild(langSpan('cs', cs)); return f; }
+  function initials(name){
+    var w = name.replace(/\(.*?\)/g, '').split(/\s+/).filter(function(x){ return /^[A-Za-zÀ-ž]/.test(x) && !/\.$/.test(x) && x.indexOf('.') === -1; });
+    if (!w.length) return '·';
+    return (w[0][0] + (w.length > 1 ? w[w.length - 1][0] : '')).toUpperCase();
+  }
+  function avatar(p){
+    var a = el('span', 'pavatar' + (p.fit === 'contain' ? ' contain' : ''));
+    if (p.photo){ var i = el('img'); i.src = p.photo; i.alt = ''; i.loading = 'lazy'; i.decoding = 'async'; a.appendChild(i); }
+    else a.textContent = initials(p.name);
+    return a;
+  }
+  function tagsEl(p){
+    var w = el('span', 'ptags');
+    p.tags.forEach(function(k){ var t = el('span', 'ptag'); t.appendChild(biSpans(TAGS[k][0], TAGS[k][1])); w.appendChild(t); });
+    return w;
+  }
+  function plain(b){ return b.v; }
+  function firstText(blocks){ for (var i = 0; i < blocks.length; i++) if (blocks[i].t !== 'a') return blocks[i].v; return ''; }
+  function langPair(v){ return (v && !Array.isArray(v)) ? v : null; }
+  function safeUrl(u){ u = String(u).trim(); if (!/^https?:\/\//i.test(u)) u = 'https://' + u; return /^https?:\/\/[^\s]+$/i.test(u) ? u : null; }
+  function shortUrl(u){ return u.replace(/^https?:\/\//i, '').replace(/\/$/, ''); }
+  function blocksEl(blocks){
+    var w = el('div', 'pcopy'), ul = null;
+    blocks.forEach(function(b){
+      if (b.t === 'li'){ if (!ul){ ul = el('ul'); w.appendChild(ul); } ul.appendChild(el('li', null, b.v)); return; }
+      ul = null;
+      if (b.t === 'a'){ var u = safeUrl(b.v); var p = el('p'); if (u){ var a = el('a', null, shortUrl(u)); a.href = u; a.target = '_blank'; a.rel = 'noopener'; p.appendChild(a); } else p.textContent = b.v; w.appendChild(p); return; }
+      w.appendChild(el('p', null, b.v));
+    });
+    return w;
+  }
+  function langBlocks(v){
+    var pair = langPair(v), f = document.createDocumentFragment();
+    if (pair){ ['de','cs'].forEach(function(l){ var d = blocksEl(pair[l]); d.setAttribute('data-lang-' + l, ''); f.appendChild(d); }); }
+    else f.appendChild(blocksEl(v));
+    return f;
+  }
+  function teaser(p){
+    var pair = langPair(p.offer);
+    if (pair) return biSpans(firstText(pair.de), firstText(pair.cs));
+    var f = document.createDocumentFragment(); f.appendChild(document.createTextNode(firstText(p.offer))); return f;
+  }
+  function renderList(){
+    var list = document.getElementById('profileList');
+    PROFILES.forEach(function(p){
+      var a = el('a', 'pcard'); a.href = '#marketplace/' + p.slug;
+      a.appendChild(avatar(p));
+      var info = el('span', 'pinfo');
+      info.appendChild(el('span', 'pname', p.name));
+      info.appendChild(el('span', 'porg', p.org));
+      info.appendChild(el('span', 'pplace', p.place));
+      info.appendChild(tagsEl(p));
+      var t = el('span', 'pteaser'); t.appendChild(teaser(p)); info.appendChild(t);
+      a.appendChild(info);
+      a.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="19" height="19" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>');
+      list.appendChild(a);
+    });
+  }
+  function block(titleDe, titleCs, content, cls){
+    var s = el('section', 'pblock' + (cls ? ' ' + cls : ''));
+    var h = el('h2'); h.appendChild(el('span', 'bar'));
+    h.appendChild(langSpan('de', titleDe)); h.appendChild(langSpan('cs', titleCs));
+    s.appendChild(h); s.appendChild(content); return s;
+  }
+  function contactRow(kind, labelDe, labelCs, text, href){
+    var r = el(href ? 'a' : 'div', href ? '' : 'pc-row');
+    if (href){ r.href = href; if (kind === 'web'){ r.target = '_blank'; r.rel = 'noopener'; } }
+    var l = el('span', 'pc-label'); l.appendChild(biSpans(labelDe, labelCs));
+    r.appendChild(l); r.appendChild(el('span', 'pc-value', text)); return r;
+  }
+  function renderProfile(idx){
+    var p = PROFILES[idx], v = document.getElementById('profileView');
+    v.textContent = '';
+    var head = el('div', 'screen-head profile-head');
+    head.appendChild(avatar(p));
+    var ht = el('div', 'phead-text');
+    var k = el('p', 'kapitel'); k.appendChild(biSpans('Partnerprofil', 'Profil partnera')); ht.appendChild(k);
+    ht.appendChild(el('h1', null, p.name));
+    ht.appendChild(el('p', 'porg', p.org));
+    if (p.org2) ht.appendChild(el('p', 'porg2', p.org2));
+    ht.appendChild(el('p', 'pplace', p.place));
+    ht.appendChild(tagsEl(p));
+    head.appendChild(ht); v.appendChild(head);
+
+    var body = el('div', 'profile-body');
+    if (p.offer) body.appendChild(block('Das kann ich anbieten', 'Co mohu nabídnout', langBlocks(p.offer)));
+    if (p.seek) body.appendChild(block('Das suche ich', 'Co hledám', langBlocks(p.seek)));
+    if (p.pain) body.appendChild(block('Hier drückt der Schuh', 'Kde nás tlačí bota', langBlocks(p.pain), 'pain-box'));
+    if (p.other) body.appendChild(block('Sonstiges', 'Ostatní', langBlocks(p.other)));
+
+    var c = el('div', 'pcontact'), any = false;
+    if (p.email){ c.appendChild(contactRow('mail', 'E-Mail', 'E-mail', p.email, 'mailto:' + p.email)); any = true; }
+    var u = p.web ? safeUrl(p.web) : null;
+    if (u){ c.appendChild(contactRow('web', 'Website', 'Web', shortUrl(u), u)); any = true; }
+    if (p.phone){ c.appendChild(contactRow('tel', 'Telefon', 'Telefon', p.phone, 'tel:' + p.phone.replace(/[^\d+]/g, ''))); any = true; }
+    if (any) body.appendChild(block('Kontakt', 'Kontakt', c));
+
+    var nav = el('div', 'pnav');
+    [[idx - 1, 'prev', 'Vorheriges Profil', 'Předchozí profil'], [idx + 1, 'next', 'Nächstes Profil', 'Další profil']].forEach(function(x){
+      var q = PROFILES[x[0]];
+      if (!q){ nav.appendChild(el('span', 'pn-spacer')); return; }
+      var a = el('a', x[1]); a.href = '#marketplace/' + q.slug;
+      var l = el('span', 'pn-label'); l.appendChild(biSpans(x[2], x[3])); a.appendChild(l);
+      a.appendChild(el('span', 'pn-name', q.name.split(',')[0]));
+      nav.appendChild(a);
+    });
+    body.appendChild(nav);
+    v.appendChild(body);
+  }
+  function profileIndex(slug){ for (var i = 0; i < PROFILES.length; i++) if (PROFILES[i].slug === slug) return i; return -1; }
+  renderList();
+
+  var backBtn = document.getElementById('backBtn');
+  var backDe = document.getElementById('backDe');
+  var backCs = document.getElementById('backCs');
+
   function applyRoute(){
-    var id = decodeURIComponent(location.hash.slice(1)) || 'home';
-    if (SCREENS.indexOf(id) === -1) id = 'home';
+    var parts = decodeURIComponent(location.hash.slice(1)).split('/');
+    var id = parts[0] || 'home';
+    if (SCREENS.indexOf(id) === -1 || id === 'profile') id = 'home';
+    var pidx = -1;
+    if (id === 'marketplace' && parts[1]){
+      pidx = profileIndex(parts[1]);
+      if (pidx !== -1){ id = 'profile'; renderProfile(pidx); }
+    }
     var isHome = id === 'home';
 
     document.querySelectorAll('.screen').forEach(function(s){
@@ -666,7 +868,11 @@ body.lang-cs .langpill button[data-lang="cs"]{background:#fff;color:var(--rf-nav
     if (!isHome){
       subTitleDe.textContent = TITLES[id][0];
       subTitleCs.textContent = TITLES[id][1];
-      document.title = TITLES[id][0] + ' — ' + BASE_TITLE;
+      var inProfile = id === 'profile';
+      backBtn.setAttribute('href', inProfile ? '#marketplace' : '#');
+      backDe.textContent = inProfile ? 'Marktplatz' : 'Übersicht';
+      backCs.textContent = inProfile ? 'Tržiště' : 'Přehled';
+      document.title = (inProfile ? PROFILES[pidx].name.split(',')[0] : TITLES[id][0]) + ' — ' + BASE_TITLE;
     } else {
       document.title = BASE_TITLE + ' — Tagungsmappe';
     }
